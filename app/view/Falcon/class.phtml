@@ -1,0 +1,22 @@
+<div id="class" class="window">
+    <form method="get" action="">
+        <input type="hidden" name="controller" value="Falcon">
+        <input type="hidden" name="action" value="zalogowany">
+        <input type="hidden" name="window" value="1">
+        
+        <label class="winlabel"><p>Клас:          </p><select type="text" name="class">
+            <option>Виберіть клас продукту</option>
+         <?php
+            $typ = test_input($_GET['typ']);
+            $wyd = test_input($_GET['wyd']);
+            $select = $Admin -> select_class($pdo,$typ,$wyd);
+            foreach($select as $sel){ if($sel['id_class'] != 1000){
+                    ?><option value="<?php echo $sel['id_class']; ?>"><?php echo $sel['name_class']; ?></option> <?php } } ?>
+            
+        </select></label>
+        <input type="hidden" name="menu" value="3">
+        <input type="hidden" name="typ" value="<?php echo $_GET['typ']; ?>">
+        <input type="hidden" name="wyd" value="<?php echo $_GET['wyd']; ?>">
+        <button class="winbut" type="submit">ОК</button>
+    </form>
+</div>

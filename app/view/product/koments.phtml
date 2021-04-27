@@ -1,0 +1,62 @@
+<div id="koments">
+
+    <?php
+        $i=0;
+        $select_kom = $Koment -> select_kom($pdo, $_GET['prod']);
+        foreach($select_kom as $sel_k){
+            $i++;
+    ?>
+    
+        <h4 id="name_kom"><?php echo $sel_k['name']; ?></h4>
+        <article id="kom">
+            <p id="k1"><?php echo $sel_k['text']; ?></p>
+            
+            <p id="k2"><?php $date = date_create($sel_k['time']); 
+            echo date_format($date, 'H:i d.m.Y '); ?></p>
+        </article>
+        <button id="k_b" class="k<?php echo $i ?>">Відповісти</button>
+        
+        <form id="kom_ans" class="f<?php echo $i ?>" method="post" action="?controller=product&action=post_ans&typ=<?php echo $_GET['typ']; ?>&wyd=<?php echo $_GET['wyd']; ?>&class=<?php echo $_GET['class']; ?>&prod=<?php echo $_GET['prod']; ?>">
+            <input type="hidden" name="id_kom" value="<?php echo $sel_k['id_kom']; ?>">
+            <input type="hidden" name="name_kom" value="<?php echo $sel_k['name']; ?>">
+            <input id="ans_name" type="text" name="name_ans" value="" placeholder="Ваше Ім'я" required>
+            <textarea id="ans_text" type="text" name="text_ans" value="" placeholder="Ваша відповідь" required></textarea>
+            
+            <button class="kom_but" type="submit">ОК</button>
+        </form>
+        
+    <?php
+            $j = 0;
+            $select_ans = $Koment -> select_ans($pdo, $sel_k['id_kom']);
+            foreach($select_ans as $sel_a){
+                $j++;
+    ?>
+        
+        
+    <div class="answer"> 
+        <h4 id="name_ans"><?php echo $sel_a['name']; ?></h4>
+        <article id="ans">
+            <p id="a1"><?php echo $sel_a['text']; ?></p>
+            <p id="a2"><?php $date = date_create($sel_a['time']); 
+            echo date_format($date, 'H:i d.m.Y '); ?></p>
+        </article>
+        <button id="a_b" class="a<?php echo $j ?>">Відповісти</button>
+        
+        <form id="kom_ans" class="a_f<?php echo $j ?>" method="post" action="?controller=product&action=post_ans&typ=<?php echo $_GET['typ']; ?>&wyd=<?php echo $_GET['wyd']; ?>&class=<?php echo $_GET['class']; ?>&prod=<?php echo $_GET['prod']; ?>">
+            <input type="hidden" name="id_kom" value="<?php echo $sel_k['id_kom']; ?>">
+            <input type="hidden" name="name_kom" value="<?php echo $sel_a['name']; ?>">
+            <input id="ans_name" type="text" name="name_ans" value="" placeholder="Ваше Ім'я" required>
+            <textarea id="ans_text" type="text" name="text_ans" value="" placeholder="Ваша відповідь" required></textarea>
+            
+            <button class="kom_but" type="submit">ОК</button>
+        </form>
+        
+    </div>
+
+    <?php 
+            }
+            ?><hr><?php
+        }
+    ?>
+    
+</div>

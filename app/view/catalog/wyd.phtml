@@ -1,0 +1,19 @@
+<div class="catalog">
+    
+    <?php
+        $select_wyd = $Catalog -> select_wyd($pdo,$_GET['typ']);
+        foreach($select_wyd as $sel_w){
+    ?>
+    
+    <article>
+        <a href="<?php echo $URL; ?>?controller=catalog&action=index&typ=<?php echo $_GET['typ'].'&wyd='.$sel_w['id_wyd'].'&class=0';?>">
+            <img src="<?php echo $URL.''.$sel_w['img_wyd']; ?>">
+            <h3><?php echo $sel_w['name_wyd']; ?></h3>
+            </a>
+    </article>
+    
+    <?php 
+            }
+         ?>
+    
+</div>

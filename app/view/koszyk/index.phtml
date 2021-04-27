@@ -1,0 +1,68 @@
+<div id="koszyk_zam">
+    <?php
+        if($_SESSION['n_k']>0){ ?>
+    <h2 >Ваші замовлення: </h2>
+    <script>
+        
+        
+        function testFunction(c, n) {
+            var x = document.getElementById("num_"+n).value;
+            var a;
+            a = x*c;
+            document.getElementById("info_"+n).innerHTML = Intl.NumberFormat('ru-RU').format(a);
+        }
+        
+    </script>
+    <form method="post" action="?controller=koszyk&action=zamowlenia">
+        
+    <?php
+            for($i=1;$i<=$_SESSION['n_zam'];$i++){
+                $select_prod = $Product -> select_prod($pdo,$_SESSION['id_tow'][$i]);
+                foreach($select_prod as $sel_p){ ?>
+
+                    <article>
+                        <img src="<?php echo $sel_p['img_prod'];?>">
+                        <h3><?php echo $sel_p['name_prod'];?></h3>
+                        
+                        <div id="cena_zam">
+                            
+                            <p><?php $cena=$sel_p['cena_prod']*$_SESSION['kilkist'][$i]; 
+                                echo '<p1 id="info_'.$i.'">' . number_format($cena, 0, ',', ' ').'</p1> грн.';?>
+                            </p>
+                            <input type="hidden" id="cena_<?php echo $i; ?>" value="<?php echo $sel_p['cena_prod']; ?>" >
+                        </div>
+                        
+                        <div id="dane_zam">
+                        <?php
+                            if(!empty($_SESSION['rozmir'][$i])){
+                            ?>
+                            
+                            <label id="roz_zam">Розмір:<select name="rozmir_<?php echo $i; ?>">
+                            <?php
+                                $select_char_prod = $Product -> select_char_prod($pdo,$_SESSION['id_tow'][$i]);
+                                foreach($select_char_prod as $sel_c_p){
+                                    if($sel_c_p['name_char']==='Розмір'){
+                            ?>
+                            <option <?php if($sel_c_p['dane_char']===$_SESSION['rozmir'][$i]){echo 'selected';} ?>><?php echo $sel_c_p['dane_char']; ?></option>
+                            <?php } } ?>
+                            </select></label>
+                            
+                            <?php  } ?>
+                            <label id="kil_zam">Кількість (в шт.):
+                                <input type="number" id="num_<?php echo $i; ?>" name="kilkist_<?php echo $i; ?>" min="1" value="<?php echo $_SESSION['kilkist'][$i];?>" oninput = "testFunction(<?php echo $sel_p['cena_prod'].",".$i ; ?>)" >
+                            </label>
+                        </div>
+                        <button type="submit" id="delet_zam" name="delet_zam" value="<?php echo $i; ?>">Видалити</button>
+                    </article>
+
+            <?php }
+            } ?> 
+        
+        <button id="but_zam" type="submit" name="but_zam">Замовити</button>
+    </form>
+    <?php  }else{ ?>
+            <div id="koszyk_zam">
+                <h2>Тут будуть Ваші замовлення</h2>
+            </div>
+      <?php  } ?>
+</div>

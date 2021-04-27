@@ -1,0 +1,53 @@
+<div id="paginations">
+    <ul>
+        
+        
+        
+            <a href="?limit=<?php echo $limit_get; ?>&start=0">&#171;</a>
+                <a style="margin-right: 10px;" href="?limit=<?php echo $limit_get; ?>&start=<?php echo $start_but-1; ?>">&#8249;</a>
+            
+        
+        
+        
+        
+        <?php 
+        $posts = $Annou -> select_posts($pdo, $limit_get);
+        $i=0; 
+        do{ $i++;
+           
+           $but_min = $start_but-3;
+           $but_max = $start_but+3;
+           $but_posts = $posts - 3;
+           $but_posts_max = $posts - 5;
+           
+            if(($start_but<=3)&&($i<=5)){
+                ?>
+                <a <?php if($i == $start_but){echo 'style="background-color: #857932;"';}?> href="?limit=<?php echo $limit_get; ?>&start=<?php echo $i; ?>">
+                    <?php echo $i; ?>
+                </a>
+                <?php 
+            }else if(($start_but<=$but_posts)&&($start_but>=4)&&($but_min<$i)&&($i<$but_max)){
+                ?>
+                <a <?php if($i == $start_but){echo 'style="background-color: #857932;"';}?> href="?limit=<?php echo $limit_get; ?>&start=<?php echo $i; ?>">
+                    <?php echo $i; ?>
+                </a>
+                <?php }
+           else if(($start_but>$but_posts)&&($i>$but_posts_max)){
+                ?>
+                <a <?php if($i == $start_but){echo 'style="background-color: #857932;"';}?> href="?limit=<?php echo $limit_get; ?>&start=<?php echo $i; ?>">
+                    <?php echo $i; ?>
+                </a>
+                <?php } ?>
+
+                
+            
+        
+        <?php }while($i<$posts); ?>
+        
+            
+                <a style="margin-left: 10px;" href="?limit=<?php echo $limit_get; ?>&start=<?php echo $start_but+1; ?>">&#8250;</a>
+            <a href="?limit=<?php echo $limit_get; ?>&start=<?php echo $posts; ?>">&#187;</a>
+        
+        
+    </ul>
+</div>

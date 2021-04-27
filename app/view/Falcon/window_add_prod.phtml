@@ -1,0 +1,85 @@
+<?php 
+    $typ = test_input($_GET['typ']);
+    $wyd = test_input($_GET['wyd']);
+    $class = test_input($_GET['class']);
+    $skl = test_input($_GET['n_skl']);
+    $char = test_input($_GET['n_c']);
+    $roz = test_input($_GET['n_roz']);
+    $img = test_input($_GET['n_img']);
+?>
+
+<div id="window_add_prod" class="window">
+    <h2>Данні товару</h2>
+    <form method="post" action="?controller=Falcon&action=add_prod_post" enctype="multipart/form-data">
+        <label class="winlabel"><input class="in_tow" type="text" name="kod" value="" placeholder="Код:">     </label>
+        <label class="winlabel"><input class="in_tow" type="text" name="name" value="" placeholder="Назва:">    </label>
+        <label class="winlabel"><input class="in_tow" type="text" name="wyrob" value="" placeholder="Виробник:"></label>
+        <label class="winlabel">
+            <select class="in_tow" name="postacz">
+                <option>Постачальник:</option>
+                <?php
+                $select_postacz = $Postacz -> select_post_name($pdo);
+                foreach($select_postacz as $sel_p){
+                    echo '<option value="'.$sel_p['name_post'].'">'.$sel_p['name_post'].'</option>';
+                }
+                ?>
+            </select>
+        </label>
+        
+        <label class="winlabel"><select name="sex">
+            <option value="0">Виберіть стать</option>
+            <optgroup label="Для дорослих">
+                <option value="1" <?php if((isset($_POST['sex']))&&($_POST['sex']==1)){echo 'selected' ;} ?>>Для чоловіків</option>
+                <option value="2" <?php if((isset($_POST['sex']))&&($_POST['sex']==2)){echo 'selected' ;} ?>>Для жінок</option>
+            </optgroup>
+            <optgroup label="Для дітей">
+                <option value="3" <?php if((isset($_POST['sex']))&&($_POST['sex']==3)){echo 'selected' ;} ?>>Для хлопчиків</option>
+                <option value="4" <?php if((isset($_POST['sex']))&&($_POST['sex']==4)){echo 'selected' ;} ?>>Для дівчаток</option>
+            </optgroup>
+            <optgroup label="Для всіх">
+                <option value="5" <?php if((isset($_POST['sex']))&&($_POST['sex']==3)){echo 'selected' ;} ?>>Унісекс</option>
+            </optgroup>
+            
+            </select></label>
+        
+            <label class="winlabel"><input class="kilkist" type="number" name="cena" value="" placeholder="Ціна:">
+            <input class="kilkist" type="number" name="ocenka" value="0" placeholder="Оцінка:">  </label>
+            <label class="winlabel"><input class="kilkist" type="number" name="group" value="" placeholder="Група:">
+            <input class="kilkist" type="text" name="color" value="" placeholder="Колір:">  </label>
+        
+        
+        
+
+        
+        <label class="winlabel"><textarea name="opis" placeholder="Опис:"></textarea></label>            
+        
+        <?php for($i=0;$i<$skl;$i++){ ?>
+            <label class="winlabel"><input class="in_tow" type="text" name="sklad_<?php echo $i ; ?>" placeholder="Складник <?php echo $i+1 ; ?>:"></label>
+        <?php } ?>
+        
+        <?php for($i=0;$i<$char;$i++){ ?>
+            <label class="winlabel"><input class="in_tow" type="text" name="n_char_<?php echo $i ; ?>" placeholder="Назва хар. <?php echo $i+1 ; ?>">
+            <input class="in_tow" type="text" name="d_char_<?php echo $i ; ?>" placeholder="Опис хар. <?php echo $i+1 ; ?>"></label>
+        <?php } ?>
+        
+        <?php for($j=1;$j<=$roz;$j++){ ?>
+            <label class="winlabel"><input class="in_tow" type="text" name="n_char_r<?php echo $i+$j ; ?>" value="Розмір <?php echo $j ; ?>" disabled>
+            <input class="in_tow" type="text" name="d_char_r<?php echo $j ; ?>" placeholder="Впишіть доступний розмір <?php echo $j ; ?>"></label>
+        <?php } ?>
+        
+        <?php for($i=0;$i<$img;$i++){ ?>
+            <label class="winlabel">Зображення <?php echo $i+1 ; ?>: <input name="img[]" type="file" /></label>
+        <?php } ?>
+        
+        <input name="n_skl" type="hidden" value="<?php echo $skl; ?>" />
+        <input name="n_c" type="hidden" value="<?php echo $char; ?>" />
+        <input name="n_r" type="hidden" value="<?php echo $roz; ?>" />
+        <input name="n_img" type="hidden" value="<?php echo $img; ?>" />
+        <input type="hidden" name="typ" value="<?php echo $typ; ?>">
+        <input type="hidden" name="wyd" value="<?php echo $wyd; ?>">
+        <input type="hidden" name="class" value="<?php echo $class; ?>">
+        
+        <button class="winbut" type="submit" name="add_prod">Додати</button>
+    </form>
+
+</div>

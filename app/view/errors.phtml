@@ -1,0 +1,9 @@
+<div id="errors">
+<?php 
+    $errors = $Admin -> select_errors($pdo);
+    foreach($errors as $err){ 
+?>
+    <h3><?php echo $err['name']; ?></h3>
+    <p><?php echo $err['Opis']; ?></p>
+    <?php } ?>
+</div>

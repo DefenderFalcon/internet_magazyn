@@ -1,0 +1,51 @@
+<div id="sort_filtr">
+    
+    <form method="post" action="?controller=catalog&action=index&typ=<?php echo $_GET['typ']; ?>&wyd=<?php echo $_GET['wyd']; ?>&class=<?php echo $_GET['class']; ?>">
+        <div id="sort">
+            <label>Сортувати за: 
+                <select name="sort">
+                    <option value="0" >Не вибрано</option>
+                    <option value="1" <?php if((isset($_SESSION['sort']))&&($_SESSION['sort']==1)){echo 'selected' ;} ?> >За рейтингом</option>
+                    <option value="2" <?php if((isset($_SESSION['sort']))&&($_SESSION['sort']==2)){echo 'selected' ;} ?> >Від дешевших</option>
+                    <option value="3" <?php if((isset($_SESSION['sort']))&&($_SESSION['sort']==3)){echo 'selected' ;} ?> >Від дорощих</option>
+                    <option value="4" <?php if((isset($_SESSION['sort']))&&($_SESSION['sort']==4)){echo 'selected' ;} ?> >Від А-Я</option>
+                    <option value="5" <?php if((isset($_SESSION['sort']))&&($_SESSION['sort']==5)){echo 'selected' ;} ?> >Від Я-А</option>
+                </select>
+            </label>
+        </div>
+        <div id="filtr">
+            <label>Виробник: 
+                <select name="wyrob">
+                    <option value=" IS NOT NULL" >Не вибрано</option>
+                    <?php
+                        
+                        foreach($select_wyrobnyk as $sel_w){
+                    ?>
+                    <option value="<?php echo " = '".$sel_w['dane_char']."'"; ?>" 
+                            <?php if((isset($_SESSION['wyrob']))&&($_SESSION['wyrob'] == " = '".$sel_w['dane_char']."'")){echo 'selected' ;} ?>><?php echo $sel_w['dane_char']; ?></option>
+                    <?php
+                        }
+                    ?>
+                </select>
+            </label>
+            <label>Стать: 
+                <select name="sex">
+                    <option value="0" >Не вибрано</option>
+                    <optgroup label="Для дорослих">
+                        <option value="1" <?php if((isset($_SESSION['sex']))&&($_SESSION['sex']==1)){echo 'selected' ;} ?>>Для чоловіків</option>
+                        <option value="2" <?php if((isset($_SESSION['sex']))&&($_SESSION['sex']==2)){echo 'selected' ;} ?>>Для жінок</option>
+                    </optgroup>
+                    <optgroup label="Для дітей">
+                        <option value="3" <?php if((isset($_SESSION['sex']))&&($_SESSION['sex']==3)){echo 'selected' ;} ?>>Для хлопчиків</option>
+                        <option value="4" <?php if((isset($_SESSION['sex']))&&($_SESSION['sex']==4)){echo 'selected' ;} ?>>Для дівчаток</option>
+                    </optgroup>
+                    <optgroup label="Для всіх">
+                        <option value="5" <?php if((isset($_SESSION['sex']))&&($_SESSION['sex']==5)){echo 'selected' ;} ?>>Унісекс</option>
+                    </optgroup>
+                </select>
+            </label>
+            <label>Ціна від:<input type="number" name="min" value="<?php if(isset($_SESSION['min'])){echo $_SESSION['min'] ;} ?>" placeholder="0"> до:<input type="number" name="max" value="<?php if(isset($_SESSION['max'])){echo $_SESSION['max'] ;} ?>" placeholder="1000000"></label>
+        </div>
+        <button type="submit">OK</button>
+    </form>
+</div>

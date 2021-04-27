@@ -1,0 +1,11 @@
+<button id="but_kom">Залишити відгук</button>
+
+<div id="add_kom">
+    <form method="post" action="?controller=product&action=post_add_kom&typ=<?php echo $_GET['typ']; ?>&wyd=<?php echo $_GET['wyd']; ?>&class=<?php echo $_GET['class']; ?>&prod=<?php echo $_GET['prod']; ?>">
+        <input type="hidden" name="id_prod" value="<?php echo $_GET['prod']; ?>">
+        <input id="ans_name" type="text" name="name" value="" placeholder="Ваше Ім'я" required>
+        <textarea id="ans_text" name="text" placeholder="Ваш відгук про товар" required></textarea>
+        
+        <button class="kom_but" type="submit">OK</button>
+    </form>
+</div>

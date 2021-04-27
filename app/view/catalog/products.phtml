@@ -1,0 +1,27 @@
+<div class="catalog">
+    
+    <?php
+        if($_GET['typ']==1000){
+
+            require 'app/view/catalog/products_typ.phtml';
+
+        }else if($_GET['wyd']==1000){
+
+            require 'app/view/catalog/products_wyd.phtml';
+
+        }else if($_GET['class']==1000){
+
+            require 'app/view/catalog/products_class.phtml';
+
+        }else if(isset($_GET['poszuk'])){
+
+            require 'app/view/catalog/products_poszuk.phtml';
+
+        }else{
+
+            require 'app/view/catalog/products_full.phtml';
+
+        }
+    ?>
+    
+</div>

@@ -1,0 +1,20 @@
+<div id="wyd" class="window">
+    <form method="get" action="">
+        <input type="hidden" name="controller" value="Falcon">
+        <input type="hidden" name="action" value="zalogowany">
+        <input type="hidden" name="window" value="1">
+        
+        <label class="winlabel"><p>Вид:          </p><select type="text" name="wyd">
+            <option>Виберіть вид продукту</option>
+         <?php
+            $typ = test_input($_GET['typ']);
+            $select = $Admin -> select_wyd($pdo,$typ);
+            foreach($select as $sel){ if($sel['id_wyd'] != 1000){
+                    ?><option value="<?php echo $sel['id_wyd']; ?>"><?php echo $sel['name_wyd']; ?></option> <?php } } ?>
+            
+        </select></label>
+        <input type="hidden" name="menu" value="2">
+        <input type="hidden" name="typ" value="<?php echo $_GET['typ']; ?>">
+        <button class="winbut" type="submit">ОК</button>
+    </form>
+</div>

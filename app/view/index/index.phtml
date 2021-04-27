@@ -1,0 +1,22 @@
+<div id="index">
+    
+    <?php
+    $select = $Annou -> select_all($pdo, $limit_get, $start);
+    foreach($select as $an){
+        $date = date_create($an['date_annou']);
+    ?>
+    
+    
+    <article id="annou">
+        <h3><?php echo $an['name_annou']; ?></h3>
+        <p><img src="<?php echo $an['img_annou']; ?>" title="фото <?php echo $an['name_annou']; ?>" alt="фото <?php echo $an['name_annou']; ?>"><?php echo $an['text_annou']; ?></p>
+        <ul><?php echo date_format($date, 'H:i / d.m.Y '); ?></ul>
+        <br class="cls">
+    </article>
+    
+    <?php
+    }
+    ?>
+    <br class="cls">
+</div>
+

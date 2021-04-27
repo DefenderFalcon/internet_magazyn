@@ -1,0 +1,9 @@
+<?php
+            
+        $surname = test_input($_GET['poszuk']);
+        $select_products = $Catalog -> select_products_poszuk($pdo, $surname);
+        
+        
+        foreach($select_products as $sel_p){
+        require 'app/view/catalog/products_view.phtml';
+        }

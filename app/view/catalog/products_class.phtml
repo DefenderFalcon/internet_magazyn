@@ -1,0 +1,53 @@
+<?php
+
+
+
+if( ((isset($_SESSION['sort']))&&(!empty($_SESSION['sort'])))||
+    ((isset($_SESSION['sex']))&&(!empty($_SESSION['sex'])))||
+    ((isset($_SESSION['wyrob']))&&(!empty($_SESSION['wyrob'])))||
+    ((isset($_SESSION['min']))&&(!empty($_SESSION['min'])))||
+    ((isset($_SESSION['max']))&&(!empty($_SESSION['max'])))){
+            //******* Сортування ****************************************
+            if($_SESSION['sort'] == 1){
+                $sort = "Ocenka DESC";
+            }else if($_SESSION['sort'] == 2){
+                $sort = "cena_prod ASC";
+            }else if($_SESSION['sort'] == 3){
+                $sort = "cena_prod DESC";
+            }else if($_SESSION['sort'] == 4){
+                $sort = "name_prod ASC";
+            }else if($_SESSION['sort'] == 5){
+                $sort = "name_prod DESC";
+            }else{
+                $sort = "id_prod DESC";
+            }
+            //******* Стать ****************************************
+            if($_SESSION['sex'] == 1){
+                $sex = " = 1";
+            }else if($_SESSION['sex'] == 2){
+                $sex = " = 2";
+            }else if($_SESSION['sex'] == 3){
+                $sex = " = 3";
+            }else if($_SESSION['sex'] == 4){
+                $sex = " = 4";
+            }else if($_SESSION['sex'] == 5){
+                $sex = " = 5";
+            }else{
+                $sex = " IS NOT NULL";
+            }
+            
+            $wyrob = $_SESSION['wyrob'];
+            if(isset($_SESSION['min'])&&(empty($_SESSION['min']))){ $min = 0; }else{ $min = $_SESSION['min']; }
+            if(isset($_SESSION['max'])&&(empty($_SESSION['max']))){ $max = 100000000; }else{ $max = $_SESSION['max']; }
+            
+            
+            $select_products = $Catalog -> select_filtr_prod_class($pdo, $_GET['typ'], $_GET['wyd'], $limit_get, $start, $sex, $wyrob, $sort, $min, $max);
+            
+        }else{
+            $select_products = $Product -> select_roz_tow($pdo, $_GET['typ'], $_GET['wyd'], $limit_get, $start);
+        }
+        foreach($select_products as $sel_p){
+            
+        require 'app/view/catalog/products_view.phtml'; 
+            
+            }

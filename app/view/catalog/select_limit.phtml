@@ -1,0 +1,12 @@
+<div id="select_limit">
+    <form method="post" action="">
+        <select name="limit">
+            <option value="30" <?php if($limit_get == 30){echo 'selected';}?>>30</option>
+            <option value="50" <?php if($limit_get == 50){echo 'selected';}?>>50</option>
+            <option value="70" <?php if($limit_get == 70){echo 'selected';}?>>70</option>
+            <option value="100" <?php if($limit_get == 100){echo 'selected';}?>>100</option>
+        </select>
+        <input type="hidden" name="start" value="1">
+        <button type="submit">Ок</button>
+    </form>
+</div>

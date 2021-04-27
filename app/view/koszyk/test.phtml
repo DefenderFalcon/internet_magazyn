@@ -1,0 +1,16 @@
+<?php
+
+    $telefon = 731800210;
+    $baly = 30;
+    $k = 0;
+
+    $klient = $Zamowienia -> select_klient($pdo);
+    foreach($klient as $kl){
+        if($kl['telefon'] == $telefon){
+            $k=1;
+            $baly = $baly + $kl['baly'];
+            $id_klient = $kl['id_klient'];
+        }
+    }
+    
+    echo $k." ".$baly." ".$id_klient;

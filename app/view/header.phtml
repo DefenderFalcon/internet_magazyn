@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Кристинопіл</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="shortcut icon" type="image/png" href="app/view/images/logo.png"/>
+
+        <link rel="stylesheet" href="app/view/styles/reset.css">
+        <link rel="stylesheet" href="app/view/styles/style.css">
+        <link rel="stylesheet" href="app/view/styles/style_max_600px.css">
+        <link rel="stylesheet" href="app/view/styles/style_min_600px.css">
+        <link rel="stylesheet" href="app/view/styles/style_min_768px.css">
+        <link rel="stylesheet" href="app/view/styles/style_min_992px.css">
+        <link rel="stylesheet" href="app/view/styles/style_min_1200px.css">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+            $("#char").hide();
+            $("#opis").show();
+            $("#ukr").hide();
+                
+            $("#img_1").show();
+            $("#img_2").hide();
+            $("#img_3").hide();
+            $("#img_4").hide();
+            $("#img_5").hide();
+            $("#img_6").hide();
+            $("#img_7").hide();
+            $("#img_8").hide();
+            $("#img_9").hide();
+            $("#img_10").hide();
+                
+                $("#but_opis").click(function(){
+                    $("#char").hide();
+                    $("#opis").show();
+              });
+                $("#but_char").click(function(){
+                    $("#char").show();
+                    $("#opis").hide();
+              });
+                $("#but_ukr").click(function(){
+                    $("#np").show();
+                    $("#ukr").hide();
+              });
+                $("#but_np").click(function(){
+                    $("#ukr").show();
+                    $("#np").hide();
+              });
+                $("#but_img_1").click(function(){
+                    $("#img_1").show();
+                    $("#img_2").hide();
+                    $("#img_3").hide();
+                    $("#img_4").hide();
+                    $("#img_5").hide();
+                    $("#img_6").hide();
+                    $("#img_7").hide();
+                    $("#img_8").hide();
+                    $("#img_9").hide();
+                    $("#img_10").hide();
+              });
+                $("#but_img_2").click(function(){
+                    $("#img_2").show();
+                    $("#img_1").hide();
+                    $("#img_3").hide();
+                    $("#img_4").hide();
+                    $("#img_5").hide();
+                    $("#img_6").hide();
+                    $("#img_7").hide();
+                    $("#img_8").hide();
+                    $("#img_9").hide();
+                    $("#img_10").hide();
+              });
+                $("#but_img_3").click(function(){
+                    $("#img_3").show();
+                    $("#img_2").hide();
+                    $("#img_1").hide();
+                    $("#img_4").hide();
+                    $("#img_5").hide();
+                    $("#img_6").hide();
+                    $("#img_7").hide();
+                    $("#img_8").hide();
+                    $("#img_9").hide();
+                    $("#img_10").hide();
+              });
+                $("#but_img_4").click(function(){
+                    $("#img_4").show();
+                    $("#img_2").hide();
+                    $("#img_3").hide();
+                    $("#img_1").hide();
+                    $("#img_5").hide();
+                    $("#img_6").hide();
+                    $("#img_7").hide();
+                    $("#img_8").hide();
+                    $("#img_9").hide();
+                    $("#img_10").hide();
+              });
+                $("#but_img_5").click(function(){
+                    $("#img_5").show();
+                    $("#img_2").hide();
+                    $("#img_3").hide();
+                    $("#img_4").hide();
+                    $("#img_1").hide();
+                    $("#img_6").hide();
+                    $("#img_7").hide();
+                    $("#img_8").hide();
+                    $("#img_9").hide();
+                    $("#img_10").hide();
+              });
+                $("#but_img_6").click(function(){
+                    $("#img_6").show();
+                    $("#img_2").hide();
+                    $("#img_3").hide();
+                    $("#img_4").hide();
+                    $("#img_5").hide();
+                    $("#img_1").hide();
+                    $("#img_7").hide();
+                    $("#img_8").hide();
+                    $("#img_9").hide();
+                    $("#img_10").hide();
+              });
+                $("#but_img_7").click(function(){
+                    $("#img_7").show();
+                    $("#img_2").hide();
+                    $("#img_3").hide();
+                    $("#img_4").hide();
+                    $("#img_5").hide();
+                    $("#img_6").hide();
+                    $("#img_1").hide();
+                    $("#img_8").hide();
+                    $("#img_9").hide();
+                    $("#img_10").hide();
+              });
+                $("#but_img_8").click(function(){
+                    $("#img_8").show();
+                    $("#img_2").hide();
+                    $("#img_3").hide();
+                    $("#img_4").hide();
+                    $("#img_5").hide();
+                    $("#img_6").hide();
+                    $("#img_7").hide();
+                    $("#img_1").hide();
+                    $("#img_9").hide();
+                    $("#img_10").hide();
+              });
+                $("#but_img_9").click(function(){
+                    $("#img_9").show();
+                    $("#img_2").hide();
+                    $("#img_3").hide();
+                    $("#img_4").hide();
+                    $("#img_5").hide();
+                    $("#img_6").hide();
+                    $("#img_7").hide();
+                    $("#img_8").hide();
+                    $("#img_1").hide();
+                    $("#img_10").hide();
+              });
+                $("#but_img_10").click(function(){
+                    $("#img_10").show();
+                    $("#img_2").hide();
+                    $("#img_3").hide();
+                    $("#img_4").hide();
+                    $("#img_5").hide();
+                    $("#img_6").hide();
+                    $("#img_7").hide();
+                    $("#img_8").hide();
+                    $("#img_9").hide();
+                    $("#img_1").hide();
+              });
+                
+                
+                 <?php
+                    $i=0;
+                    $j = 0;
+                    $select_kom = $Koment -> select_kom($pdo, $_GET['prod']);
+                    foreach($select_kom as $sel_k){
+                        $i++;
+                ?>
+                
+                $(".f<?php echo $i; ?>").hide();
+                
+                
+                $(".k<?php echo $i; ?>").click(function(){
+                    $(".f<?php echo $i; ?>").toggle();
+                });
+                
+                <?php
+                    $select_ans = $Koment -> select_ans($pdo, $sel_k['id_kom']);
+                    foreach($select_ans as $sel_a){
+                        $j++;
+                ?>
+                
+                    $(".a_f<?php echo $j; ?>").hide();
+
+
+                    $(".a<?php echo $j; ?>").click(function(){
+                        $(".a_f<?php echo $j; ?>").toggle();
+                    });
+                
+                <?php 
+                        }
+                    }
+                ?>
+                
+                $("#add_kom").hide();
+                $("#but_kom").click(function(){
+                    $("#add_kom").toggle();
+                });
+                
+                
+            });
+        </script>
+    </head>
+    <body>
+        <header>
+            <div id="head">
+                <a href="https://krystynopil.biz.ua/">
+                    <img src="app/view/images/logo.png">
+                    <article>
+                        <h1>Кристинопіль</h1>
+                        <span>Наш товар за справедливу ціну</span>
+                    </article>
+                </a>
+            </div>
+            <div id="poszuk">
+                <form method="get" action="">
+                    <input type="hidden" name="controller" value="catalog">
+                    <input type="hidden" name="action" value="index">
+                    <input type="text" name="poszuk" placeholder="&#128269; Пошук" maxlength="50" required>
+                    <button type="submit">ОК</button>
+                </form>
+            </div>
+            <div id="koszyk">
+                <a href="<?php echo $URL; ?>?controller=koszyk&action=index">
+                    <article><img src="app/view/images/Koszyk.gif"></article>
+                    <p><?php if(isset($_SESSION['n_k'])){echo $_SESSION['n_k'];}else{echo '0';} ?></p>
+                </a>
+            </div>
+            <br class="cls">
+        </header>

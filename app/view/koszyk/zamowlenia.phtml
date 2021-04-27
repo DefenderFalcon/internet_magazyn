@@ -1,0 +1,49 @@
+<div id="zamowlenia">
+    <p>Спосіб доставки: </p>
+    <div id="but_np"><img src="app\view\images\ukr_posz.jpg"></div>
+    <div id="but_ukr"><img src="app\view\images\np_posz.png"></div>
+    
+    <div id="ukr" class="posz">
+        <form method="post" action="?controller=koszyk&action=usp_zam" autocomplete="on">
+            <h4>Доставка Укрпоштою</h4>
+            <label>Фамілія: <input type="text" name="surname" maxlength="25" placeholder="Петров" required autofocus></label>
+            <label>Ім'я: <input type="text" name="name" maxlength="25" placeholder="Петро" required></label>
+            <label>По-батькові: <input type="text" name="po_batkowi" maxlength="20" placeholder="Петрович" required></label>
+            <label><p1>Телефон: </p1><p2>+380 </p2><input type="number" name="telefon" pattern="[0-9]{11}"  placeholder="631111111" maxlength="11" required></label>
+            <label>Email (не обов'язково): <input type="email" name="email" maxlength="50" placeholder="xxxxxxxx@gmail.com" value=""></label>
+            <label>Область: <input type="text" name="oblast" maxlength="25" placeholder="Львівська" required></label>
+            <label>Район: <input type="text" name="rajon" maxlength="25" placeholder="Львівський" required></label>
+            <label>Населений пункт: <input type="text" name="nas_punkt" maxlength="25" placeholder="Львів" required></label>
+            <label>Поштовий індекс: <input type="number" name="p_i" maxlength="5" placeholder="00000" required></label>
+            
+            <label>Спосіб оплати: 
+                <select name="sp_opl" >
+                    <option value="1">Наложним (При отриманні на пошті)</option>
+                    <option value="2">Предоплата</option>
+                </select>
+            </label>
+            
+            <button class="sub_zam" type="submit" name="buy_zam_ukr">Замовити</button>
+        </form>
+    </div>
+    <div id="np" class="posz">
+        <form method="post" action="?controller=koszyk&action=usp_zam" autocomplete="on">
+            <h4>Доставка Новою Поштою</h4>
+            <label>Фамілія: <input type="text" name="surname" maxlength="25" placeholder="Петров" required autofocus></label>
+            <label>Ім'я: <input type="text" name="name" maxlength="25" placeholder="Петро" required></label>
+            <label><p1>Телефон: </p1><p2>+380 </p2><input type="number" name="telefon" pattern="[0-9]{11}" placeholder="631111111"  maxlength="11" required></label>
+            <label>Email  (не обов'язково): <input type="email" name="email" maxlength="50" placeholder="xxxxxxxx@gmail.com" value=""></label>
+            <label>Область: <input type="text" name="oblast" maxlength="25" placeholder="Львівська" required></label>
+            <label>Населений пункт: <input type="text" name="nas_punkt" maxlength="25" placeholder="Львів" required></label>
+            <label>Відділення нової пошти: <input type="number" name="widilenia" maxlength="50" placeholder="1" required></label>
+            <label>Спосіб оплати: 
+                <select name="sp_opl" >
+                    <option value="1">Наложним (При отриманні на пошті)</option>
+                    <option value="2">Предоплата</option>
+                </select>
+            </label>
+            
+            <button class="sub_zam" type="submit" name="buy_zam_np">Замовити</button>
+        </form>
+    </div>
+</div>

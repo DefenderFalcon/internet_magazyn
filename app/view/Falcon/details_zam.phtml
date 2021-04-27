@@ -1,0 +1,152 @@
+<div class="window">
+    <h2>Деталі замовлення ід: <?php echo $_GET['id']; ?></h2>
+    <?php 
+    $select = $Zamowienia -> select_zam_id($pdo, $_GET['id']);
+    foreach($select as $sel){
+    ?>
+    <article class="winlabel">
+        <form method="post" action="?controller=Falcon&action=update_zam">
+        <article id="det_zam">
+        <h4>Ід працівника: <?php echo $sel['id_prac']; ?></h4> 
+        <h4>Час заказу: <?php $date = date_create($sel['time']); 
+        echo date_format($date, 'H:i d.m.Y '); ?></h4> 
+        
+        <label>Фамілія: 
+            <input type="text" name="surname" value="<?php echo $sel['surname']; ?>"></label>
+        <label>Ім'я: 
+            <input type="text" name="name" value="<?php echo $sel['name']; ?>"></label>
+        <label>По-Батькові: 
+            <input type="text" name="po_bat" value="<?php echo $sel['po_batkowi']; ?>"></label>
+        <label>Телефон: 
+            <input type="text" name="tel" value="<?php echo $sel['telefon']; ?>"></label>
+        <label>Email: 
+            <input type="text" name="email" value="<?php echo $sel['email']; ?>"></label>
+        <label>Статус: 
+            <select name="status">
+                <option value="0" <?php if($sel['status']==0){ echo 'selected' ; }  ?>>Не підтверджено</option>
+                <option value="1" <?php if($sel['status']==1){ echo 'selected' ; }  ?>>В процесі</option>
+                <option value="2" <?php if($sel['status']==2){ echo 'selected' ; }  ?>>Виконано</option>
+            </select>
+        </label>
+        <div class="line"></div>
+        
+        </article>
+        <h3>Товар</h3>
+        
+        
+        
+        <?php 
+        $i=0;
+        $select_prod_zam = $Zamowienia -> select_zam_tow($pdo, $_GET['id']);
+        foreach($select_prod_zam as $sel_p_z){
+            $i++;
+                $select_prod = $Product -> select_prod($pdo, $sel_p_z['id_prod']);
+                foreach($select_prod as $sel_p){
+        
+        ?>
+        <article id="zam_towar">
+        <p class="name_prod"><?php echo $sel_p['name_prod']; ?></p>
+        <img src="<?php echo $sel_p['img_prod']; ?>">
+        <p class="kod_prod"><?php echo "Код товару: ".$sel_p['kod_prod']; ?></p>
+        <p class="post_prod"><?php echo "Постачальник: ".$sel_p['postaczalnyk']; ?></p>
+        <p class="cena_prod"><?php echo $sel_p['cena_prod'].' грн/шт.'; ?></p>
+        
+        <label id="roz_zam">Розмір:<select name="rozmir_<?php echo $i ;?>">
+                            <?php
+                                $select_char_prod = $Product -> select_char_prod($pdo,$sel_p_z['id_prod']);
+                                foreach($select_char_prod as $sel_c_p){
+                                    if($sel_c_p['name_char']==='Розмір'){
+                            ?>
+                            <option <?php if($sel_c_p['dane_char']===$sel_p_z['rozmir']){echo 'selected';} ?>><?php echo $sel_c_p['dane_char']; ?></option>
+                            <?php } } ?>
+                            </select></label>
+        
+        <label id="kil_zam">Кількість: 
+            <input type="text" name="kilkist_<?php echo $i ;?>" value="<?php echo $sel_p_z['kilkist']; ?>"></label>
+            
+            <input type="hidden" name="id_tow_<?php echo $i ;?>" value="<?php echo $sel_p_z['id_prod']; ?>">
+            <input type="hidden" name="del_id_zam" value="<?php echo $_GET['id']; ?>">
+            <input type="hidden" name="cena_<?php echo $i ;?>" value="<?php echo $sel_p['cena_prod']; ?>">
+            
+            <input type="hidden" name="rozmir" value="<?php echo $sel_p_z['rozmir']; ?>">
+            <input type="hidden" name="kilkist" value="<?php echo $sel_p_z['kilkist']; ?>">
+            <button id="delet_tow_zam" type="submit" name="del_tow" value="<?php echo $sel_p_z['id_prod']; ?>">Видалити</button>
+        </article>
+        <?php } 
+        } ?>
+        
+        
+        <label><p><?php echo 'Загальна сума замовлення: '.$sel['suma'].' грн.'; ?></p></label>
+        <label><p><?php echo 'Спосіб оплати: '; if($sel['sp_opl']==1){echo 'Наложним платижем';}else if($sel['sp_opl']==2){ echo 'Предоплата';} ?></p></label>
+            <div class="line"></div>
+        
+        
+        <article id="zam_adres">
+        
+            
+            <?php 
+        
+                $obl        = "";
+                $nas_p      = "";
+                $wid        = "";
+        
+            $select_np_zam = $Zamowienia -> select_zam_np($pdo, $_GET['id']);
+            foreach($select_np_zam as $sel_n_z){ 
+                
+                $obl        = $sel_n_z['oblast'];
+                $nas_p      = $sel_n_z['nas_punkt'];
+                $wid        = $sel_n_z['widdlil'];
+
+            } ?>
+            
+            
+            <h3>Адрес доставки Новою поштою</h3>
+        <label>Область: 
+            <input type="text" name="oblast" value="<?php echo $obl; ?>"></label>
+        <label>Населений пункт: 
+            <input type="text" name="nas_punkt" value="<?php echo $nas_p; ?>"></label>
+        <label>Відділення НП: 
+            <input type="text" name="widdil_np" value="<?php echo $wid; ?>"></label>
+            <div class="line"></div>
+        
+        
+            
+            <?php 
+        
+                $obl        = "";
+                $rajon      = "";
+                $nas_p      = "";
+                $pi         = "";
+        
+            $select_ukr_zam = $Zamowienia -> select_zam_ukr($pdo, $_GET['id']);
+            foreach($select_ukr_zam as $sel_u_z){ 
+                $obl        = $sel_u_z['oblast'];
+                $rajon      = $sel_u_z['rajon'];
+                $nas_p      = $sel_u_z['nas_punkt'];
+                $pi         = $sel_u_z['P_I'];
+            
+             } ?>
+            
+            <h3>Адрес доставки Укрпоштою</h3>
+        <label>Область: 
+            <input type="text" name="oblast_ukr" value="<?php echo $obl; ?>"></label>
+        <label>Район: 
+            <input type="text" name="rajon_ukr" value="<?php echo $rajon; ?>"></label>
+        <label>Населений пункт: 
+            <input type="text" name="nas_punkt_ukr" value="<?php echo $nas_p; ?>"></label>
+        <label>Поштовий індекс: 
+            <input type="text" name="p_i" value="<?php echo $pi; ?>"></label>
+            <div class="line"></div>
+            
+            
+            
+        </article>
+            <input type="hidden" name="id_zam" value="<?php echo $_GET['id']; ?>">
+            <input type="hidden" name="id_prac" value="<?php echo $_SESSION['adm']; ?>">
+            <input type="hidden" name="k_tow" value="<?php echo $i; ?>">
+            <button id="delete_zam" type="submit" name="delet_zam">Видалити замовлення</button>
+            <button id="zminyty" type="submit" name="update">Підтвердити</button>
+        </form>
+    </article>
+    <?php } ?>
+</div>

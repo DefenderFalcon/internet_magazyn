@@ -1,0 +1,20 @@
+<div class="catalog">
+    
+    <?php
+        $select_typ = $Catalog -> select_typ($pdo);
+        foreach($select_typ as $sel_t){
+    ?>
+    
+    <article>
+        <a href="<?php echo $URL; ?>?controller=catalog&action=index&typ=<?php echo $sel_t['id_typ'];?>&wyd=0&class=0">
+            <img src="<?php echo $URL.''.$sel_t['img_typ']; ?>">
+            <h3><?php echo $sel_t['name_typ']; ?></h3>
+            </a>
+    </article>
+    
+    <?php 
+            }
+         ?>
+
+    
+</div>

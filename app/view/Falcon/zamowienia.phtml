@@ -1,0 +1,56 @@
+<div class="window">
+    <h2>Список замовлень</h2>
+    <table id="sp_zam">
+        <tr>
+            <th class="num">№</th>
+            <th class="id">ІД</th> 
+            <th class="tel">Телефон</th>
+            <th class="sur">Фамілія</th>
+            <th class="name">Ім'я</th> 
+            <th class="sum">Сума</th>
+            <th class="stat">Статус</th>
+            <th class="time">Час</th>
+            <th class="butt">Силка</th>
+        </tr>
+    <?php 
+    $n = 0;
+    $select = $Zamowienia -> select_zam($pdo);
+    foreach($select as $sel){
+        $n++;
+        $date = date_create($sel['time']);
+        
+    ?>
+        
+          <tr>
+            <th class="num">    <?php echo $n; ?>                   </th>
+            <th class="id">     <?php echo $sel['id_zam']; ?>       </th> 
+            <th class="tel">    <?php echo $sel['telefon']; ?>      </th>
+            <th class="sur">    <?php echo $sel['surname']; ?>      </th>
+            <th class="name">   <?php echo $sel['name']; ?>         </th> 
+            <th class="sum">    <?php echo $sel['suma']; ?>         </th>
+            <th class="stat" <?php if($sel['status']==0){
+                                            echo "style = 'color: darkred;'";
+                                        }else if($sel['status']==1){
+                                            echo "style = 'color: green;'";
+                                        }else if($sel['status']==2){
+                                            echo "style = 'color: green;'";
+                                        } ?>>   
+                <?php   if($sel['status']==0){
+                            echo "Не підтверджено";
+                        }else if($sel['status']==1){
+                            echo "В процесі";
+                        }else if($sel['status']==2){
+                            echo "Виконано";
+                        } ?>       
+              </th>
+            <th class="time">   <?php echo date_format($date, 'H:i d.m.Y '); ?>         </th>
+            
+              <th class="butt"><a href="?controller=Falcon&action=zalogowany&window=2&id=<?php echo $sel['id_zam']; ?>"><button>Детальніше</button></a></th>
+        </tr>
+        
+    
+    <?php 
+    }
+    ?>
+    </table> 
+</div>

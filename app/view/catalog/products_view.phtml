@@ -1,0 +1,9 @@
+<div class="products">
+
+    <a href="<?php echo $URL; ?>?controller=product&action=index&typ=<?php echo $sel_p['id_typ'] . '&wyd=' . $sel_p['id_wyd'] . '&class=' . $sel_p['id_class'].'&prod='.$sel_p['id_prod'];?>">
+        <img src="<?php echo $URL.''.$sel_p['img_prod']; ?>">
+        <h3><?php echo $sel_p['name_prod']; ?></h3>
+        <p><?php echo number_format($sel_p['cena_prod'], 0, ',', ' ')." грн."; ?><p>
+    </a>
+
+</div>

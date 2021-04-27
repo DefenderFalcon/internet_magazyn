@@ -1,0 +1,456 @@
+@media only screen and (min-width: 992px) {
+    /*************************************** Index ***********************************/
+    /************   Index   ***** Header    ***********    */
+    #head{
+        width: 43%;
+        margin-left: 2%;
+    }
+    #poszuk{
+        width: 20%;
+        margin-top: 10px;
+        margin-left: 19%;
+    }
+    #koszyk{
+        width: 55px;
+        margin-right: 5%;
+        margin-top: 10px;
+    }
+    #koszyk p{
+        width: 20%;
+        bottom: 55px;
+        left: 35px;
+        font-size: 12px;
+    }
+    /************   Menu    ************/
+    #menu{
+        margin-top: 0px;
+    }
+    /************   Index   ***** Golowna    ***********    */
+    #index{
+        width: 100%;
+    }
+    #annou{
+        width: 80%;
+        margin-left: 10%;
+        margin-top: 30px;
+    }
+    #annou h3{
+        width: 80%;
+        margin: 1%;
+        margin-left: 10%;
+        font-size: 21px;
+        font-weight: 600;
+    }
+    #annou img{
+        width: 30%;
+        border-radius: 10px;
+        box-shadow: 2px 2px 2px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+    #annou p{
+        margin: 1%;
+        font-size: 16px;
+        font-weight: 300;
+    }
+    #annou ul{
+        text-align: center;
+        width: 95%;
+        height: 20px;
+        margin: 0.5%;
+        font-size: 16px;
+    }
+    /***************** Pagination *****************/
+    #paginations{
+        margin-top: 30px;
+        width: 50%;
+        margin-left: 0px;
+    }
+    #paginations ul a{
+        float: left;
+        width: 25px;
+    }
+    #select_limit{
+        width: 15%;
+        margin-left: 25%;
+        margin-top: 30px;
+        margin-right: 0px;
+    }
+    /************   Index   ***** Footer    ***********    */
+    footer{
+        margin-top: 60px;
+        bottom: 0px;
+        font-size: 14px;
+        height: 40px;
+    }
+    #foo{
+        height: 100px;
+    }
+    #footer{
+        padding-bottom: 10px;
+        height: 40px;
+    }
+    #footer .foot_logo{
+        width: 30px;
+        float: left;
+        margin-top: 5px;
+        margin-left: 5%;
+        box-shadow: 1px 1px 1px;
+    }
+    #footer .foot_soc{
+        width: 30px;
+        float: left;
+        margin-top: 5px;
+        margin-left: 5px;
+        box-shadow: 1px 1px 1px;
+        border-radius: 5px;
+    }
+    #foot_text{
+        width: 60%;
+        float: left;
+        text-align: center;
+        margin-top: 15px;
+    }
+    #footer p{
+        margin-left: 10px;
+        float: left;
+    }
+    #footer h4{
+        margin-left: 10px;
+        float: left;
+    }
+    #footer ul{
+        margin-left: 10px;
+        float: left;
+    }
+    /*************************************** Catalog ***********************************/
+    .catalog{
+        width: 80%;
+        margin-top: 30px;
+        margin-left: 10%;
+    }
+    .catalog article{
+        width: 200px;
+        margin-left: 0px;
+        margin-right: 5%;
+        margin-bottom: 30px;
+    }
+    .catalog article img{
+        width: 100%;
+        height: 142px;
+    }
+    .catalog article h3{
+        width: 100%;
+        font-size: 16px;
+        font-weight: 300;
+        height: 30px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    /*------------- Products -------------------------------------------------------------*/
+    .products{
+        width: 150px;
+        margin-right: 5%;
+        margin-left: 0px;
+        margin-top: 1%;
+        margin-bottom: 1%;
+    }
+    .products img{
+        width: 100%;
+        height: 200px;
+    }
+    .products h3{
+        width: 100%;
+        height: 40px;
+        font-size: 14px;
+        font-weight: 300;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .products p{
+        width: 100%;
+        font-size: 14px;
+        font-weight: 600;
+        padding-top: 5px;
+    }
+    /*------------- Sort & Filtr -------------------------------------------------------------*/
+    #sort_filtr{
+        width: 100%;
+        margin-top: 2px;
+    }
+    #sort{
+        width: 15%;
+        margin: 1%;
+        margin-left: 5%;
+        margin-top: 5px;
+        font-size: 14px;
+    }
+    #sort select{
+        width: 100%;
+        height: 25px;
+        margin-top: 5px;
+        font-size: 12px;
+    }
+    #filtr{
+        width: 70%;
+        margin: 1%;
+        margin-left: 5%;
+        margin-top: 18px;
+        font-size: 14px;
+    }
+    #filtr select{
+        width: 20%;
+        height: 25px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    #filtr input{
+        width: 10%;
+        height: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 5px;
+    }
+    #sort_filtr button{
+        width: 90%;
+        height: 27px;
+        margin: 5px;
+        margin-left: 5%;
+        font-size: 14px;
+        font-weight: 600;
+    }
+    /*------------- Product -------------------------------------------------------------*/
+    .product{
+        width: 100%;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .conteiner{
+        width: 40%;
+    }
+    #images{
+        width: 100%;
+        margin: 3%;
+        margin-top: 0px;
+    }
+    .image{
+        width: 100%;
+    }
+    .but_img{
+        width: 30px;;
+        height: 40px;
+        margin: 2px;
+        margin-top: 5px;
+    }
+    .but_img img{
+        width: 100%;
+    }
+    .content{
+        width: 54%;
+        margin: 3%;
+        margin-top: 0px;
+    }
+    .product h3{
+        width: 100%;
+        margin-top: 10px;
+        font-size: 21px;
+        margin-bottom: 3%;
+    }
+    #kolir, #rozmir, #kilkist{
+        width: 100%;
+        margin-top: 0px;
+        margin-bottom: 1%;
+        margin-left: 3%;
+    }
+    #kolir select, #rozmir select{
+        width: 50%;
+        margin-top: 5px;
+    }
+    #kilkist input{
+        width: 30%;
+        margin-left: 2%;
+        margin-right: 1%;
+    }
+    #kilkist input p{
+        width: 5%;
+    }
+    #kupyty{
+        width: 100%;
+        height: 30px;
+        margin-left: 3%;
+        margin-top: 3%;
+        margin-bottom: 3%;
+        font-size: 16px;
+        font-weight: 900;
+    }
+    .but{
+        width: 50%;
+        margin-top: 2%;
+        font-size: 14px;
+        font-weight: 300;
+    }
+    #opis, #char{
+        width: 94%;
+        padding: 3%;
+    }
+    #char li{
+        width: 90%;
+        margin-left: 10%;
+    }
+    #prod_cena{
+        width: 40%;
+        text-align: right;
+        height: 30px;
+        color: darkred;
+        font-size: 21px;
+        font-weight: 600;
+        padding-top: 10px;
+    }
+    #but_color{
+        margin-left: 3%;
+        width: 55%;
+    }
+    #but_color p{
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    #color{
+        width: 30px;
+        height: 30px;
+        margin-left: 10px;
+    }
+    
+    #but_kom{
+        width: 30%;
+        margin-left: 35%;
+        margin-bottom: 30px;
+        height: 30px;
+        font-weight: 600;
+    }
+    /*------------- Koszyk_zam -------------------------------------------------------------*/
+    #koszyk_zam{
+        margin-top: 30px;
+        width: 90%;
+        margin-left: 5%;
+        margin-bottom: 50px;
+    }
+    #koszyk_zam h2{
+        font-size: 18px;
+    }
+    #koszyk_zam article{
+        width: 100%;
+        margin-top: 7px;
+    }
+    #koszyk_zam article img{
+        height: 100px;
+        margin: 1%;
+        margin-right: 0%;
+    }
+    #koszyk_zam article h3{
+        width: 25%;
+        height: 100px;
+        font-size: 14px;
+        font-weight: 300;
+        margin-top: 1%;
+        padding-right: 1%;
+        padding-left: 1%;
+    }
+    #cena_zam{
+        width: 10%;
+        height: 100px;
+        font-size: 14px;
+        font-weight: 300;
+        margin-top: 1%;
+        padding-right: 1%;
+        padding-left: 1%; 
+    }
+    #dane_zam{
+        width: 30%;
+        height: 100px;
+        font-size: 10px;
+        font-weight: 300;
+        margin-top: 1%;
+        padding-right: 1%;
+        padding-left: 1%;
+    }
+    #delet_zam{
+        width: 10%;
+        height: 20px;
+        font-size: 12px;
+    }
+    #col_zam, #roz_zam, #kil_zam{
+        width: 100%;
+        margin-top: 1%;
+    }
+    #col_zam select, #roz_zam select{
+        width: 100%;
+        font-size: 12px;
+    }
+    #kil_zam input{
+        width: 30%;
+        margin-right: 35%;
+    }
+    #but_zam{
+        width: 25%;
+        margin-top: 2%;
+        margin-left: 40%;
+        margin-right: 40%;
+        height: 25px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+    /****************** Замовлення **************/
+    #zamowlenia{
+        width: 54%;
+        padding: 3%;
+        margin-top: 30px;
+        margin-bottom: 50px;
+        margin-left: 20%;
+    }
+    #zamowlenia p{
+        margin-top: 7px;
+    }
+    #but_np, #but_ukr{
+        width: 12%;
+        margin: 10px;
+        margin-top: 0%;
+        margin-right: 0%;
+    }
+    #but_np img, #but_ukr img{
+        width: 100%;;
+    }
+    #zamowlenia h4{
+        width: 100%;
+        margin-bottom: 2%;
+        font-size: 24px;
+    }
+    .posz{
+        width: 100%;
+    }
+    .posz label{
+        width: 100%;
+        margin-bottom: 15px;
+        font-size: 16px;
+    }
+    .posz label input, .posz label select{
+        width: 50%;
+        height: 30px;
+        text-align: center;
+        font-size: 14px;
+    }
+    .posz label p1{
+    }
+    .posz label p2{
+        margin-top: 4px;
+        margin-left: 23%;
+    }
+    .sub_zam{
+        width: 25%;
+        margin-top: 2%;
+        margin-left: 40%;
+        margin-right: 40%;
+        height: 30px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+} 

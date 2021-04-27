@@ -1,0 +1,121 @@
+<div class="product">
+    
+    <?php
+        $select_prod = $Product -> select_prod($pdo,$_GET['prod']);
+        foreach($select_prod as $sel_p){
+    ?>
+    <h3><?php echo $sel_p['name_prod']; ?></h3>
+    <div class="conteiner">
+        <div id="images">
+        <?php $i=0;
+            $select_imgs = $Product -> select_imgs_prod($pdo,$_GET['prod']);
+            foreach($select_imgs as $img){
+                $i++;
+        ?>
+        <img class="image" id="img_<?php echo $i; ?>" src="<?php echo $URL.''.$img['img_prod']; ?>" title="<?php echo $img['img_title']; ?>">
+        <?php } ?>
+            <?php $i=0;
+            $select_imgs = $Product -> select_imgs_prod($pdo,$_GET['prod']);
+            foreach($select_imgs as $img){
+                $i++;
+        ?>
+        <div id="but_img_<?php echo $i; ?>" class="but_img"><img id="img_<?php echo $i; ?>" src="<?php echo $URL.''.$img['img_prod']; ?>"></div>
+        <?php } ?>
+            
+            
+            
+        </div>
+        
+        <div id="prod_cena"><article><?php echo number_format($sel_p['cena_prod'], 0, ',', ' ').' грн.'; ?></article></div>
+        
+        <div id="but_color"><p>Колір: </p>
+                <?php
+                    $select_color = $Product -> select_prod_color($pdo,$sel_p['color_group']);
+                    foreach($select_color as $sel_col){
+                        ?>
+                        <a href="<?php echo $URL; ?>?controller=product&action=index&
+                                 typ=<?php echo $sel_col['id_typ']; ?>&
+                                 wyd=<?php echo $sel_col['id_wyd']; ?>&
+                                 class=<?php echo $sel_col['id_class']; ?>&
+                                 prod=<?php echo $sel_col['id_prod']; ?>">
+                            <div id="color" style="background-color: <?php echo $sel_col['color']; ?>;"></div>
+                        </a><?php
+                    }
+        ?>
+        </div>
+        
+        
+        <form method="post" action="?controller=catalog&action=index&typ=<?php echo $_GET['typ'];?>&wyd=<?php echo $_GET['wyd'];?>&class=<?php echo $_GET['class'];?>&prod=<?php echo $_GET['prod'];?>">
+                
+            <?php
+                $i=0;
+                $select_char_prod = $Product -> select_char_prod($pdo,$_GET['prod']);
+                foreach($select_char_prod as $sel_c_p){
+                    if(($sel_c_p['name_char']==='Розмір')&&($i==0)){
+                        $i=1;
+            ?>
+            <label id="rozmir">Розмір:<select name="rozmir">
+                <?php
+                    $select_char_prod = $Product -> select_char_prod($pdo,$_GET['prod']);
+                    foreach($select_char_prod as $sel_c_p){
+                        if($sel_c_p['name_char']==='Розмір'){
+                ?>
+                <option><?php echo $sel_c_p['dane_char']; ?></option>
+                <?php } } ?>
+                </select></label>
+            
+            <?php } } ?>
+            
+            <label id="kilkist">Кількість (в шт.):
+                <input type="number" id="num" name="kilkist" min="1" value="1">
+            </label>
+            
+            <input type="hidden" name="id_tow" value="<?php echo $_GET['prod'];?>">
+            <button id="kupyty" type="submit" name="kupytu">У кошик</button>
+        </form>
+    </div>
+    
+    <div class="content">
+        
+        <button id="but_opis" class="but" >Опис</button>
+        <button id="but_char" class="but" >Характеристика</button>
+        
+        <article id="opis">
+            <?php
+                $select_dane_prod = $Product -> select_dane_prod($pdo,$_GET['prod']);
+                foreach($select_dane_prod as $sel_d_p){
+            ?>
+            <p><?php echo $sel_d_p['prod_opis']; ?></p>
+            <?php
+                }
+            ?>
+        </article>
+        <article id="char">
+            <b>Характеристика:</b>
+            <?php
+                $select_char_prod = $Product -> select_char_prod($pdo,$_GET['prod']);
+                foreach($select_char_prod as $sel_c_p){
+                    if(($sel_c_p['name_char']==='Колір')||($sel_c_p['name_char']==='Розмір')){}else{
+            ?>
+            <li><?php echo $sel_c_p['name_char'].': '.$sel_c_p['dane_char']; ?></li>
+            <?php
+                } }
+            ?>
+            <b>Склад:</b>
+            <?php
+                $select_sklad_prod = $Product -> select_sklad_prod($pdo,$_GET['prod']);
+                foreach($select_sklad_prod as $sel_s_p){
+            ?>
+            <li><?php echo $sel_s_p['dane_sklad']; ?></li>
+            <?php
+                }
+            ?>
+        </article>
+        
+    </div>
+    
+    <?php 
+            }
+         ?>
+    
+</div>

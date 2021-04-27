@@ -1,0 +1,788 @@
+body{
+    background-image: linear-gradient(#CCBD9B , #AEB2C5, #CCBD9B);
+    font-family: "AcademiaLibera";
+    padding-top: 90px;
+    width: 100%;
+}
+/*------------- Header -------------------------------------------------------------*/
+header{
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    background-color: #6E738B;
+    height: auto;
+    box-shadow: 3px 3px 3px;
+}
+#head{
+    float: left;
+}
+#head a{
+    color: black;
+}
+#head a:hover{
+    color: #E5E0BC;
+}
+#head a:active{
+    opacity: 0.4;
+}
+#head img{
+    height: 70px;
+    float: left;
+    margin: 10px;
+    box-shadow: 2px 2px 2px;
+}
+#head article{
+    float: left;
+}
+#head article h1{
+    width: 180px;
+    margin: 5px;
+    margin-top: 10px;
+    color: #E5E0BC;
+    font-family: "BodoniC_Bold";
+    font-size: 32px;
+    font-weight: 300;
+    text-decoration: underline;
+}
+#head span{
+    color: #E5E0BC;
+    font-size: 14px;
+    font-weight: 100;
+    margin: 5px;
+}
+#poszuk{
+    float: left;
+}
+#poszuk input{
+    float: left;
+    width: 70%;
+    height: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px;
+}
+#poszuk button{
+    float: left;
+    width: 21%;
+    height: 27px;
+    margin-left: 3px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px;
+}
+/*------------- Koszyk -------------------------------------------------------------*/
+#koszyk{
+    float: right;
+}
+#koszyk article{
+    width: 100%;
+    background-color: #CCC59B;
+    border-radius: 50px;
+    box-shadow: 0px 0px 15px;
+    color: black;
+    border-style: inset;
+    border-width: 1px;
+}
+#koszyk article:hover{
+    background-color: #E6E1C7;
+}
+#koszyk article:active{
+    opacity: 0.4;
+}
+#koszyk img{
+    width: 100%;
+}
+#koszyk p{
+    position: relative;
+    background-color: red;
+    border-radius: 25px;
+    text-align: center;
+    border: #000 solid 1px;
+    color: white;
+    padding: 1px;
+}
+#koszyk a{
+    text-decoration: none;
+}
+/*------------- Koszyk_zam -------------------------------------------------------------*/
+#koszyk_zam{
+    float: left;
+}
+#koszyk_zam h2{
+    text-align: center;
+}
+#koszyk_zam article{
+    float: left;
+    background: rgba(255,255,255,0.7);
+    border-bottom: #000 solid 2px;
+    border-radius: 10px;
+}
+#koszyk_zam article img{
+    border-radius: 7px;
+    float: left;
+}
+#koszyk_zam article h3{
+    border-right-style: inset;
+    border-right-width: 1px;
+    border-right-color: black;
+    float: left;
+    text-align: center;
+}
+#cena_zam{
+    text-align: center;
+    float: left;
+    border-right-style: inset;
+    border-right-width: 1px;
+    border-right-color: black;
+}
+#dane_zam{
+    text-align: left;
+    float: left;
+    border-right-style: inset;
+    border-right-width: 1px;
+    border-right-color: black;
+}
+#delet_zam{
+    float: right;
+    background-color: #FF7373;
+    border-radius: 5px;
+    border-style: inherit;
+    border: #000 solid 1px;
+}
+
+#delet_zam:hover{
+    color: white;
+}
+#delet_zam:active{
+    opacity: 0.4;
+}
+
+#col_zam, #roz_zam, #kil_zam{
+    float: left;
+}
+#col_zam select, #roz_zam select{
+    float: right;
+    border-radius: 10px;
+}
+#kil_zam input{
+    float: right;
+    border-radius: 10px;
+    text-align: center;
+}
+#but_zam{
+    float: left;
+    background-color: #CCC59B;
+    border-radius: 5px;
+    border-style: inherit;
+    border: #000 solid 1px;
+    box-shadow: 1px 1px 1px;
+}
+#but_zam:hover{
+    background-color: #E6E1C7;
+}
+#but_zam:active{
+    opacity: 0.4;
+}
+/*------------- Menu -------------------------------------------------------------*/
+#menu{
+    position:inherit;
+    width: 100%;
+    background-color: #CCC59B;
+    height: auto;
+    box-shadow: 3px 3px 3px;
+}
+#menu ul{
+    width: 100%;
+}
+#menu ul li{
+    width: auto;
+    float: left;
+    padding: 10px;
+    height: 20px;
+    font-size: 16px;
+}
+#menu ul li a{
+    text-decoration: none;
+    color: black;
+}
+#menu ul li a:hover{
+    text-decoration: none;
+    color: black;
+}
+#menu ul li:hover{
+    background-color: #E6E1C7;
+    color: white;
+}
+#menu ul li:active{
+    opacity: 0.4;
+}
+.active{
+    background-color: #857932;
+}
+/*------------- Sort & Filtr -------------------------------------------------------------*/
+#sort_filtr{
+    float: left;
+    background-color: #AEB2C5;
+    box-shadow: 3px 3px 3px;
+}
+#sort{
+    float: left;
+}
+#sort select{
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 1px 1px 1px;
+}
+#filtr{
+    float: left;
+}
+#filtr select{
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 1px 1px 1px;
+}
+#filtr input{
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 1px 1px 1px;
+}
+#sort_filtr button{
+    float: left;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px;
+}
+
+/*------------- Footer -------------------------------------------------------------*/
+footer{
+    width: 100%;
+    position:fixed;
+    box-shadow: 3px -3px 3px;
+}
+
+#foo{
+    float: left;
+    width: 100%;
+}
+#footer{
+    height: auto;
+    background-color: #6E738B;
+}
+#footer a{
+    color: black;
+}
+#footer .foot_logo:hover, #footer .foot_soc:hover{
+    color: #E6E1C7;
+}
+#footer .foot_logo:active, #footer .foot_soc:active{
+    opacity: 0.4;
+}
+#footer .foot_text{
+    float: left;
+}
+#footer p{
+    text-decoration: underline;
+}
+/*------------- Index -------------------------------------------------------------*/
+#index{
+    float: left;
+}
+#annou{
+    background: rgba(255,255,255,0.5);
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px;
+    float: left;
+    margin-top: 30px;
+    font-family: serif;
+}
+#annou h3{
+    text-align: center;
+}
+#annou img{
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px;
+    float: left;
+}
+#annou ul{
+    float: left;
+    text-align: right;
+}
+
+/*------------- Pagination -------------------------------------------------------------*/
+#paginations{
+    position: inherit;
+    float: left;
+}
+#paginations ul{
+    width: 100%;
+}
+#paginations ul a{
+    float: left;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #CCC59B;
+    margin-left: 3px;
+    box-shadow: 1px -1px 2px;
+}
+#paginations ul a:hover{
+    background-color: #E6E1C7;
+}
+#paginations ul a:active{
+    opacity: 0.4;
+}
+#paginations ul a{
+    text-decoration: none;
+    color: black;
+}
+#paginations ul a:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+#paginations ul a:last-child  {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+#select_limit{
+    position: inherit;
+    float: left;
+}
+#select_limit select{
+    background-color: #CCC59B;
+    border: none;
+    box-shadow: 1px -1px 2px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 3px;
+    border-radius: 5px 0px 0px 5px;
+}
+#select_limit select:hover{
+    background-color: #E6E1C7;
+}
+#select_limit select:active{
+    opacity: 0.4;
+}
+#select_limit button{
+    background-color: #CCC59B;
+    box-shadow: 1px -1px 2px;
+    border: none;
+    border-radius: 0px 5px 5px 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: 600;
+}
+#select_limit button:hover{
+    background-color: #E6E1C7;
+}
+#select_limit button:active{
+    opacity: 0.4;
+}
+/*------------- Catalog -------------------------------------------------------------*/
+.catalog{
+    float: left;
+}
+.catalog article{
+    border-radius: 10px;
+    float: left;
+}
+.catalog article:hover{
+    background-color: white;
+}
+.catalog article:active{
+    opacity: 0.4;
+}
+.catalog article a{
+    text-decoration: none;
+    color: black;
+}
+.catalog article img{
+    border-radius: 10px 10px 0px 0px;
+    box-shadow: 0px 2px 2px 0px;
+    float: left;
+}
+.catalog article h3{
+    border-bottom: #000 solid 2px;
+    border-radius: 0px 0px 10px 10px;
+    text-align: center;
+    float: left;
+    background: rgba(255,255,255,0.7);
+}
+
+
+/*------------- Products -------------------------------------------------------------*/
+.products{
+    float: left;
+    background: rgba(255,255,255,0.7);
+    border-bottom: #000 solid 2px;
+    border-radius: 10px;
+}
+.products:hover{
+    background-color: white;
+}
+.products:active{
+    opacity: 0.4;
+}
+.products a{
+    text-decoration: none;
+    color: black;
+}
+.products img{
+    border-radius: 10px 10px 0px 0px;
+    box-shadow: 0px 2px 2px 0px;
+    float: left;
+}
+.products h3{
+    text-align: center;
+    float: left;
+    border-bottom: #000 solid 1px;
+}
+.products p{
+    text-align: right;
+    float: left;
+    border-radius: 0px 0px 10px 10px;
+}
+
+/*------------- Product -------------------------------------------------------------*/
+.product{
+    float: left;
+    background: rgba(255,255,255,0.7);
+    border-bottom: #000 solid 2px;
+    border-radius: 10px;
+}
+.conteiner{
+    float: left;
+}
+#images{
+    float: left;
+}
+.image{
+    box-shadow: 3px 3px 3px;
+    border-radius: 10px;
+}
+.but_img{
+    float: left;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px;
+}
+.but_img img{
+    border-radius: 10px;
+}
+.content{
+    float: left;
+    font-family: serif;
+}
+.product h3{
+    float: left;
+    text-align: center;
+    text-decoration: underline;
+}
+#kolir, #rozmir, #kilkist{
+    float: left;
+}
+#rozmir select{
+    border-radius: 10px;
+    text-align: center;
+    float: right;
+}
+#kilkist input{
+    border-radius: 10px;
+    float: right;
+    text-align: center;
+}
+#kilkist input p{
+    float: right;
+}
+#kupyty{
+    float: left;
+    background-color: #CCC59B;
+    border-radius: 5px;
+    border-style: inherit;
+    border: #000 solid 1px;
+    box-shadow: 1px 1px 1px;
+    height: 25px;
+}
+#kupyty:hover{
+    background-color: #E6E1C7;
+}
+#kupyty:active{
+    opacity: 0.4;
+}
+.but{
+    float: left;
+    border-style:inset;
+    border-width: 1px;
+    border-bottom: none;
+    border-top: none;
+    border-right: none;
+    border-color: black;
+    background-color: #A6ACC5;
+    font-family: "AcademiaLibera";
+    box-shadow: 2px 2px 2px;
+}
+.but:hover{
+    background-color: #DCDCDC;
+}
+.but:active{
+    opacity: 0.4;
+}
+#but_opis{
+    border-radius: 10px 0px 0px 0px;
+}
+#but_char{
+    border-radius: 0px 10px 0px 0px;
+}
+#opis, #char{
+    float: left;
+    border-style:inset;
+    border-width: 1px;
+    border-bottom: none;
+    border-top: none;
+    box-shadow: 2px 2px 2px;
+    background-color: #A6ACC5;
+}
+#prod_cena{
+    float: right;
+    border-bottom: #000 solid 1px;
+}
+#but_color{
+    float: left;
+}
+#but_color p{
+    float: left;
+}
+#color{
+    float: left;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px;
+    border: #000 solid 1px;
+    color: black;
+}
+
+/****************** Коментарі **************/
+#koments{
+    float: left;
+    background: rgba(255,255,255,0.7);
+    border-bottom: #000 solid 2px;
+    border-radius: 10px;
+}
+#koments .answer{
+    width: 90%;
+    margin-left: 10%;
+    background-color: #A6ACC5;
+    margin-bottom: 10px;
+    border-bottom: #000 solid 1px;
+    border-radius: 10px;
+    float: left;
+}
+#k_b{
+    background-color: #A6ACC5;
+    border-radius: 10px;
+    border: #000 solid 1px;
+}
+#a_b{
+    background-color: white;
+    border-radius: 10px;
+    margin-left: 5px;
+    border: #000 solid 1px;
+}
+#k_b:hover{
+    font-weight: 600;
+    border: #000 solid 2px;
+}
+#a_b:hover{
+    font-weight: 600;
+    border: #000 solid 2px;
+}
+#k_b:active{
+    opacity: 0.4;
+}
+#a_b:active{
+    opacity: 0.4;
+}
+
+
+#kom_ans{
+    width: 100%;
+    margin-bottom: 10px;
+    float: left;
+}
+#ans_name{
+    width: 20%;
+    margin-left: 5px;
+    float: left;
+    box-shadow: 1px 1px 1px;
+    text-align: center;
+    border-radius: 5px;
+}
+#ans_name:hover{
+    font-weight: 600;
+    border: #000 solid 2px;
+}
+#ans_text{
+    width: 50%;
+    margin-left: 5px;
+    float: left;
+    box-shadow: 1px 1px 1px;
+    border-radius: 5px;
+}
+#ans_text:hover{
+    font-weight: 600;
+    border: #000 solid 2px;
+}
+.kom_but{
+    width: 20%;
+    margin-left: 5px;
+    float: left;
+    box-shadow: 1px 1px 1px;
+    background-color: #A6ACC5;
+    border-radius: 5px;
+}
+.kom_but:hover{
+    font-weight: 600;
+    border: #000 solid 2px;
+}
+.kom_but:active{
+    opacity: 0.4;
+}
+#but_kom{
+    width: 50%;
+    margin-left: 25%;
+    margin-bottom: 30px;
+    height: 30px;
+    font-weight: 600;
+    
+    float: left;
+    border-radius: 10px;
+    background-color: #CCC59B;
+    border: #000 solid 1px;
+    box-shadow: 1px 1px 1px;
+}
+#but_kom:hover{
+    background-color: #E6E1C7;
+}
+#but_kom:active{
+    opacity: 0.4;
+}
+#add_kom{
+    width: 100%;
+    margin-bottom: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    
+    background: rgba(255,255,255,0.7);
+    border-bottom: #000 solid 2px;
+    border-radius: 10px;
+    float: left;
+}
+/****************** Замовлення **************/
+#zamowlenia{
+    float: left;
+    background: rgba(255,255,255,0.7);
+    border-bottom: #000 solid 2px;
+    border-radius: 10px;
+}
+#zamowlenia p{
+    float: left;
+}
+#but_np, #but_ukr{
+    float: left;
+    border-radius: 3px;
+}
+#but_np img, #but_ukr img{
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px;
+    border: #000 solid 1px;
+}
+#but_np img:hover, #but_ukr img:hover{
+    color: #6E738B;
+    box-shadow: 4px 4px 4px;
+}
+#but_np img:active, #but_ukr img:active{
+    opacity: 0.4;
+}
+#zamowlenia h4{
+    float: left;
+    text-align: center;
+    text-decoration: underline;
+}
+.posz{
+    float: left;
+}
+.posz label{
+    float: left;
+}
+.posz label input, .posz label select{
+    float: right;
+    border-radius: 5px;
+    border: #000 inset 1.5px;
+    box-shadow: 1px 1px 1px;
+}
+.posz label p1{
+    float: left;
+}
+.posz label p2{
+    float: left;
+}
+.sub_zam{
+    float: left;
+    background-color: #CCC59B;
+    border-radius: 5px;
+    border-style: inherit;
+    border: #000 solid 1px;
+    box-shadow: 1px 1px 1px;
+}
+.sub_zam:hover{
+    background-color: #E6E1C7;
+}
+.sub_zam:active{
+    opacity: 0.4;
+}
+
+
+
+
+
+
+/*------------- Clear -------------------------------------------------------------*/
+.cls{
+    clear: both;
+}
+
+/*------------- Font Family -------------------------------------------------------------*/
+@font-face {
+    font-family: "BodoniC_Bold"; 
+    src: url("font/BodoniC_Bold/BodoniC-Bold.eot"); 
+    src: url("font/BodoniC_Bold/BodoniC-Bold.eot?#iefix") format("embedded-opentype"),
+    url("font/BodoniC_Bold/BodoniC-Bold.woff") format("woff"), 
+    url("font/BodoniC_Bold/BodoniC-Bold.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+}
+@font-face {
+    font-family: "AcademiaLibera"; 
+    src: url("font/AcademiaLibera/AcademiaLibera.eot"); 
+    src: url("font/AcademiaLibera/AcademiaLibera.eot?#iefix") format("embedded-opentype"),
+    url("font/AcademiaLibera/AcademiaLibera.woff") format("woff"), 
+    url("font/AcademiaLibera/AcademiaLibera.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+}
+
+
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+ 

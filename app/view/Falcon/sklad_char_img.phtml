@@ -1,0 +1,19 @@
+<div class="window">
+<form method="get" action="">
+    <input type="hidden" name="controller" value="Falcon">
+    <input type="hidden" name="action" value="zalogowany">
+    <input type="hidden" name="window" value="1">
+    
+    <label class="winlabel"><p>Кількість складів товару:         </p><input class="kilkist" type="number" name="n_skl"></label>
+    <label class="winlabel"><p>Кількість характеристик товару:   </p><input class="kilkist" type="number" name="n_c"></label>
+    <label class="winlabel"><p>Кількість розмірів:               </p><input class="kilkist" type="number" name="n_roz"></label>
+    <label class="winlabel"><p>Кількість зображень товару:       </p><input class="kilkist" type="number" name="n_img"></label>
+    
+    
+    <input type="hidden" name="menu" value="4">
+    <input type="hidden" name="typ" value="<?php echo $_GET['typ']; ?>">
+    <input type="hidden" name="wyd" value="<?php echo $_GET['wyd']; ?>">
+    <input type="hidden" name="class" value="<?php echo $_GET['class']; ?>">
+    <button class="winbut" type="submit" name="skl_car">ОК</button>
+</form>
+</div>

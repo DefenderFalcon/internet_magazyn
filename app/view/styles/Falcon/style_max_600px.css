@@ -1,0 +1,410 @@
+@media only screen and (max-width: 600px) {
+    /*************************************** Index ***********************************/
+    /************   Index   ***** Header    ***********    */
+    #head{
+        width: 70%;
+    }
+    #head img{
+        height: 50px;
+        float: left;
+        margin: 5px;
+        box-shadow: 2px 2px 2px;
+    }
+    #head article h1{
+        font-size: 14px;
+    }
+    #head span{
+        color: #E5E0BC;
+        font-size: 8px;
+    }
+    #name_adm{
+        float: right;
+        color: #E5E0BC;
+        font-family: "BodoniC_Bold";
+        margin-right: 5px;
+        margin-top: 20px;
+    }
+    #name_adm p{
+        font-size: 12px;
+        margin-bottom: 5px;
+    }
+    #name_adm h3{
+        font-size: 14px;
+        text-decoration: underline;
+    }
+    /************   Index   ***** Footer    ***********    */
+    footer{
+        margin-top: 60px;
+        bottom: 0px;
+        font-size: 10px;
+        height: 40px;
+    }
+    #foo{
+        height: 100px;
+    }
+    #footer{
+        padding-bottom: 10px;
+        height: 40px;
+    }
+    #footer .foot_logo{
+        width: 30px;
+        float: left;
+        margin-top: 5px;
+        margin-left: 5px;
+        box-shadow: 1px 1px 1px;
+    }
+    #footer .foot_soc{
+        width: 30px;
+        float: left;
+        margin-top: 5px;
+        margin-left: 5px;
+        box-shadow: 1px 1px 1px;
+        border-radius: 5px;
+    }
+    #foot_text{
+        width: 70%;
+        float: left;
+        margin-top: 5px;
+    }
+    #footer p{
+        margin-left: 10px;
+        float: left;
+    }
+    #footer h4{
+        margin-left: 10px;
+        float: left;
+    }
+    #footer ul{
+        margin-left: 10px;
+        float: left;
+    }
+/*************      Login       **********************/
+    #adm_login{
+        width: 80%;
+        height: 260px;
+        margin-top: 60px;
+        margin-left: 10%;
+        padding-top: 40px;
+    }
+    #adm_login input{
+        width: 60%;
+        height: 30px;
+        margin-left: 20%;
+        margin-right: 20%;
+        margin-top: 20px;
+        font-size: 16px;
+    }
+    #adm_login button{
+        width: 40%;
+        height: 30px;
+        margin-left: 30%;
+        margin-right: 30%;
+        margin-top: 40px;
+        font-size: 16px;
+        font-weight: 600;
+    }
+    /*************      Menu       **********************/
+    #menu_but{
+        width: 25%;
+        margin-left: 5px;
+        margin-top: 30px;
+        padding-top: 1px;
+        padding-bottom: 1px;
+    }
+    #menu_but button{
+        width: 100%;
+        height: 40px;
+        font-size: 12px;
+        font-weight: 300;
+    }
+    /*************      Window       **********************/
+    .window{
+        width: 60%;
+        margin-left: 15px;
+        margin-top: 30px;
+        padding: 1%;
+    }
+    .winlabel{
+        width: 96%;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        padding-left: 1%;
+        padding-right: 1%;
+    }
+    .window p{
+        padding-top: 7px;
+        margin-left: 10px;
+        font-size: 14px;
+    }
+    .window h2{
+        width: 98%;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+    .window select{
+        float: left;
+        width: 90%;
+        height: 30px;
+        margin-right: 10px;
+        font-size: 12px;
+    }
+    .kilkist{
+        float: right;
+        margin-right: 10px;
+        width: 40px;
+        height: 25px;
+        font-size: 12px;
+        font-weight: 600;
+    }
+    .in_tow{
+        width: 90%;
+        height: 25px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .window textarea{
+        width: 98%;
+        height: 100px;
+    }
+    .winbut{
+        width: 30%;
+        height: 30px;
+        margin-top: 30px;
+        margin-left: 35%;
+        margin-bottom: 10px;
+        font-size: 12px;
+        font-weight: 600;
+    }
+    /*************      Замовлення       **********************/
+    #sp_zam{
+        width: 99%;
+        border: #000 solid 1px;
+        font-size: 8px;
+    }
+    #sp_zam th{
+        height: 25px;
+        padding-top: 7px;
+    }
+    #sp_zam .num{
+        width: 4%;
+        border-bottom: #000 solid 1px;
+        border-left: #000 solid 1px;
+        float: left;
+    }
+    #sp_zam .id{
+        width: 6%;
+        border-bottom: #000 solid 1px;
+        border-left: #000 solid 1px;
+        float: left;
+    }
+    #sp_zam .tel{
+        width: 13%;
+        border-bottom: #000 solid 1px;
+        border-left: #000 solid 1px;
+        float: left;
+    }
+    #sp_zam .sur{
+        width: 13%;
+        border-bottom: #000 solid 1px;
+        border-left: #000 solid 1px;
+        float: left;
+    }
+    #sp_zam .name{
+        width: 13%;
+        border-bottom: #000 solid 1px;
+        border-left: #000 solid 1px;
+        float: left;
+    }
+    #sp_zam .sum{
+        width: 7%;
+        border-bottom: #000 solid 1px;
+        border-left: #000 solid 1px;
+        float: left;
+    }
+    #sp_zam .stat{
+        width: 12%;
+        border-bottom: #000 solid 1px;
+        border-left: #000 solid 1px;
+        float: left;
+
+    }
+    #sp_zam .time{
+        width: 15%;
+        border-bottom: #000 solid 1px;
+        border-left: #000 solid 1px;
+        float: left;
+    }
+    #sp_zam .butt{
+        width: 12%;
+        border-bottom: #000 solid 1px;
+        border-left: #000 solid 1px;
+        float: left;
+
+    }
+    #sp_zam .butt button{
+        width: 100%;
+        color: #E5E0BC;
+        background-color: #6E738B;
+        font-size: 8px;
+        height: 25px;
+        font-weight: 600;
+    }
+    #sp_zam .butt a{
+        text-decoration: none;
+        color: black;
+    }
+    /*************     Деталі Замовлення       **********************/
+    #det_zam{
+
+    }
+    #det_zam h4{
+        float: left;
+        text-align: center;
+        width: 40%;
+        margin-bottom: 30px;
+        font-size: 12px;
+    }
+    #det_zam label{
+        float: left;
+        width: 40%;
+        margin-right: 5%;
+        margin-bottom: 10px;
+        margin-left: 10px;
+    }
+    #det_zam label input{
+        border-radius: 10px;
+        width: 100%;
+        height: 25px;
+        text-align: center;
+        font-size: 12px;
+        font-weight: 600;
+        float: right;
+    }
+    #det_zam label select{
+        float: right;
+    }
+    .window h3{
+        width: 100%;
+        margin-bottom: 10px;
+        float: left;
+    }
+    #zam_towar{
+        width: 100%;
+        float: left;
+    }
+    #zam_towar img{
+        width: 20%; 
+        margin: 1%;
+
+        float: left;
+        box-shadow: 1px 1px 1px;
+    }
+    .name_prod{
+        width: 100%;
+        font-weight: 600;
+        text-decoration: underline;
+        float: left;
+        text-align: center;
+    }
+    .kod_prod{
+        width: 25%;
+        font-size: 10px;
+        float: left;
+    }
+    .post_prod{
+        width: 30%;
+        font-size: 10px;
+        float: left;
+    }
+    .cena_prod{
+        width: 20%;
+        font-size: 10px;
+        font-weight: 600;
+        float: left;
+        text-align: center;
+    }
+    #roz_zam{
+        float: left;
+        font-size: 12px;
+    }
+    #kil_zam{
+        float: left;
+    }
+    #zam_towar label{
+        float: left;
+        width: 95%; 
+        margin-right: 3%;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+    #zam_towar label select{
+        float: left;
+        width: 100%; 
+    }
+    #zam_towar label input{
+        border-radius: 10px;
+        width: 95%;
+        height: 25px;
+        text-align: center;
+        float: right; 
+    }
+
+    #delet_tow_zam{
+        float: right;
+        width: 40%;
+
+        margin: 1%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        
+        box-shadow: 1px 1px 1px;
+        border-radius: 10px;
+        background-color: #6E738B;
+        color: white;
+        height: 30px;
+    }
+    #delete_zam{
+        width: 40%;
+
+        box-shadow: 1px 1px 1px;
+        border-radius: 10px;
+        background-color: tomato;
+        color: black;
+        height: 40px;
+        float: right;
+    }
+    #zminyty{
+        width: 40%;
+
+        box-shadow: 1px 1px 1px;
+        border-radius: 10px;
+        background-color: greenyellow;
+        color: black;
+        height: 40px;
+        float: left;
+    }
+    #zam_adres{
+        width: 100%;
+        float: left;
+    }
+    #zam_adres label{
+        float: left;
+        font-size: 12px;
+        width: 100%;
+        margin-right: 5%;
+        margin-bottom: 10px;
+    }
+    #zam_adres label input{
+        border-radius: 10px;
+        width: 50%;
+        height: 25px;
+        text-align: center;
+        font-size: 12px;
+        font-weight: 600;
+
+        float: right;
+    }
+
+} 

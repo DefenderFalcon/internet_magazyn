@@ -1,0 +1,89 @@
+<div id="menu">
+    <ul>
+        <label><li <?php if($_GET['controller']=='index'){echo 'class="active"';} ?> >
+            <a href="<?php echo $URL; ?>?controller=index&action=index">
+                    Головна</a></li></label>
+        <label><li <?php if(($_GET['controller']=='catalog')&&(empty($_GET['typ']))){echo 'class="active"';} ?>>
+            <a href="<?php echo $URL; ?>?controller=catalog&action=index&typ=0&wyd=0&class=0">
+                    Каталог</a></li></label>
+        
+        
+        <?php
+            if(isset($_GET['typ'])){
+                if(!empty($_GET['typ'])){
+                    $select_typ = $Catalog -> select_typ($pdo);
+                    foreach($select_typ as $sel_t){
+                        if($_GET['typ'] === $sel_t['id_typ']){   
+                ?>
+
+                <label><li <?php if(($_GET['typ'] != 0)&&(empty($_GET['wyd']))){echo 'class="active"';} ?>>
+                    <a href="<?php echo $URL; ?>?controller=catalog&action=index&typ=<?php echo $_GET['typ']; ?>&wyd=0&class=0">
+                            <?php echo "&#8658; ".$sel_t['name_typ']; ?></a></li></label>
+
+
+                <?php 
+                            }
+                    } 
+                }
+            }
+        ?>
+        
+        <?php
+            if(isset($_GET['wyd'])){
+                $select_wyd = $Catalog -> select_wyd($pdo, $_GET['typ']);
+                foreach($select_wyd as $sel_w){
+                    if($_GET['wyd'] === $sel_w['id_wyd']){   
+            ?>
+
+            <label><li <?php if(($_GET['wyd'] != 0)&&(empty($_GET['class']))){echo 'class="active"';} ?>>
+                <a href="<?php echo $URL; ?>?controller=catalog&action=index&typ=<?php echo $_GET['typ']; ?>&wyd=<?php echo $_GET['wyd']; ?>&class=0">
+                        <?php echo "&#8658; ".$sel_w['name_wyd']; ?></a></li></label>
+
+
+            <?php 
+                        }
+                } 
+            }
+        ?>
+        
+        <?php
+            if(isset($_GET['class'])){
+                $select_class = $Catalog -> select_class($pdo,$_GET['typ'],$_GET['wyd']);
+                foreach($select_class as $sel_c){
+                    if($_GET['class'] === $sel_c['id_class']){   
+            ?>
+
+            <label><li <?php if(($_GET['class'] != 0)&&(!isset($_GET['prod']))){echo 'class="active"';} ?>>
+                <a href="<?php echo $URL; ?>?controller=catalog&action=index&typ=<?php echo $_GET['typ']; ?>&wyd=<?php echo $_GET['wyd']; ?>&class=<?php echo $_GET['class']; ?>">
+                        <?php echo "&#8658; ".$sel_c['name_class']; ?></a></li></label>
+
+
+            <?php 
+                        }
+                } 
+            }
+        ?>
+        
+        <?php
+            if(isset($_GET['prod'])){
+                $select_prod = $Product -> select_prod($pdo,$_GET['prod']);
+                foreach($select_prod as $sel_p){
+            ?>
+
+            <label><li <?php if(($_GET['class'] != 0)&&(!empty($_GET['class']))){echo 'class="active"';} ?>>
+                <a href="<?php echo $URL; ?>?controller=catalog&action=index&typ=<?php echo $_GET['typ']; ?>&wyd=<?php echo $_GET['wyd']; ?>&class=<?php echo $_GET['class']; ?>&prod=<?php echo $_GET['prod']; ?>">
+                        <?php echo "&#8658; ".$sel_p['name_prod']; ?></a></li></label>
+
+
+            <?php 
+                }
+            }
+        ?>
+        
+        
+        
+    
+    
+    <br class="cls">
+    </ul>
+</div>

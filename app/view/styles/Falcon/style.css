@@ -1,0 +1,507 @@
+body{
+    background-image: linear-gradient(#CCBD9B , #AEB2C5, #CCBD9B);
+    font-family: "AcademiaLibera";
+    padding-top: 90px;
+    width: 100%;
+}
+/*------------- Header -------------------------------------------------------------*/
+header{
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    background-color: #6E738B;
+    height: auto;
+    box-shadow: 3px 3px 3px;
+}
+#head{
+    float: left;
+}
+#head img{
+    height: 70px;
+    float: left;
+    margin: 10px;
+    box-shadow: 2px 2px 2px;
+}
+#head article{
+    float: left;
+}
+#head article h1{
+    width: 180px;
+    margin: 5px;
+    margin-top: 10px;
+    color: #E5E0BC;
+    font-family: "BodoniC_Bold";
+    font-size: 32px;
+    font-weight: 300;
+    text-decoration: underline;
+}
+#head span{
+    color: #E5E0BC;
+    font-size: 14px;
+    font-weight: 100;
+    margin: 5px;
+}
+#name_adm{
+    width: auto;
+    float: right;
+    color: #E5E0BC;
+    font-family: "BodoniC_Bold";
+    margin-right: 5%;
+    margin-top: 20px;
+}
+#name_adm p{
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+#name_adm h3{
+    font-size: 24px;
+    text-decoration: underline;
+}
+/*------------- Footer -------------------------------------------------------------*/
+footer{
+    width: 100%;
+    position:fixed;
+    box-shadow: 3px -3px 3px;
+}
+
+#foo{
+    float: left;
+    width: 100%;
+}
+#footer{
+    height: auto;
+    background-color: #6E738B;
+}
+#footer a{
+    color: black;
+}
+#footer .foot_logo:hover, #footer .foot_soc:hover{
+    color: #E6E1C7;
+}
+#footer .foot_logo:active, #footer .foot_soc:active{
+    opacity: 0.4;
+}
+#footer .foot_text{
+    float: left;
+}
+#footer p{
+    text-decoration: underline;
+}
+/*************      Login       **********************/
+#adm_login{
+    width: 40%;
+    height: 260px;
+    margin-top: 60px;
+    margin-left: 30%;
+    padding-top: 40px;
+    
+    box-shadow: 3px 3px 3px;
+    border: #E5E0BC double 5px;
+    background-color: #6E738B;
+}
+#adm_login input{
+    width: 40%;
+    height: 30px;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 20px;
+    
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+}
+#adm_login button{
+    width: 40%;
+    height: 30px;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 40px;
+    
+    border-radius: 5px;
+    background: #E5E0BC;
+    border: #000 solid 1px;
+    box-shadow: 3px 3px 3px;
+    font-size: 16px;
+    font-weight: 600;
+}
+/*************      Menu       **********************/
+#menu_but{
+    float: left;
+    width: 20%;
+    margin-left: 5%;
+    margin-top: 30px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    box-shadow: 3px 3px 3px;
+    border: #E5E0BC double 5px;
+    background-color: #6E738B;
+}
+#menu_but button{
+    width: 100%;
+    height: 30px;
+    font-size: 14px;
+    font-weight: 600;
+}
+/*************      Window       **********************/
+.window{
+    float: left;
+    width: 60%;
+    margin-left: 5%;
+    margin-top: 30px;
+    padding: 1%;
+    box-shadow: 3px 3px 3px;
+    border: #E5E0BC double 5px;
+    background-color: #6E738B;
+}
+.winlabel{
+    float: left;
+    width: 98%;
+    border-left: #E5E0BC solid 5px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 1%;
+    padding-right: 1%;
+    background: rgba(255,255,255,0.6);
+}
+.window p{
+    float: left;
+    padding-top: 7px;
+    margin-right: 10px;
+}
+.window h2{
+    width: 98%;
+    text-align: center;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border-left: #E5E0BC solid 5px;
+    background: rgba(255,255,255,0.6);
+    margin-bottom: 30px;
+    font-size: 21px;
+}
+.window select{
+    float: left;
+    width: 210px;
+    height: 30px;
+    text-align: center;
+    font-size: 12px;
+    border-radius: 10px;
+}
+.kilkist{
+    border-radius: 10px;
+    margin-right: 10px;
+    width: 70px;
+    height: 25px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+}
+.in_tow{
+    border-radius: 10px;
+    width: 220px;
+    height: 25px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+}
+.window textarea{
+    width: 98%;
+    height: 100px;
+    border-radius: 10px;
+}
+.winbut{
+    float: left;
+    width: 30%;
+    height: 30px;
+    margin-top: 30px;
+    margin-left: 35%;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 3px 3px 3px;
+    border-right: 10px;
+}
+/*************      Замовлення       **********************/
+#sp_zam{
+    width: 98%;
+    border: #000 solid 2px;
+    background: rgba(255,255,255,0.6);
+    font-family: serif;
+    font-weight: 300;
+    font-size: 13px;
+}
+#sp_zam th{
+    height: 25px;
+    padding-top: 7px;
+}
+#sp_zam .num{
+    width: 4%;
+    border-bottom: #000 solid 1px;
+    border-left: #000 solid 1px;
+    float: left;
+}
+#sp_zam .id{
+    width: 6%;
+    border-bottom: #000 solid 1px;
+    border-left: #000 solid 1px;
+    float: left;
+}
+#sp_zam .tel{
+    width: 13%;
+    border-bottom: #000 solid 1px;
+    border-left: #000 solid 1px;
+    float: left;
+}
+#sp_zam .sur{
+    width: 13%;
+    border-bottom: #000 solid 1px;
+    border-left: #000 solid 1px;
+    float: left;
+}
+#sp_zam .name{
+    width: 13%;
+    border-bottom: #000 solid 1px;
+    border-left: #000 solid 1px;
+    float: left;
+}
+#sp_zam .sum{
+    width: 7%;
+    border-bottom: #000 solid 1px;
+    border-left: #000 solid 1px;
+    float: left;
+}
+#sp_zam .stat{
+    width: 12%;
+    border-bottom: #000 solid 1px;
+    border-left: #000 solid 1px;
+    float: left;
+    
+}
+#sp_zam .time{
+    width: 15%;
+    border-bottom: #000 solid 1px;
+    border-left: #000 solid 1px;
+    float: left;
+}
+#sp_zam .butt{
+    width: 15%;
+    border-bottom: #000 solid 1px;
+    border-left: #000 solid 1px;
+    float: left;
+    
+}
+#sp_zam .butt button{
+    width: 100%;
+    color: #E5E0BC;
+    background-color: #6E738B;
+    font-size: 14px;
+    height: 25px;
+    font-weight: 600;
+}
+#sp_zam .butt a{
+    text-decoration: none;
+    color: black;
+}
+/*************     Деталі Замовлення       **********************/
+#det_zam{
+    
+}
+#det_zam h4{
+    float: left;
+    text-align: center;
+    
+    width: 40%;
+    margin-bottom: 30px;
+}
+#det_zam label{
+    float: left;
+    
+    width: 40%;
+    margin-right: 5%;
+    margin-bottom: 10px;
+}
+#det_zam label input{
+    border-radius: 10px;
+    width: 220px;
+    height: 25px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    
+    float: right;
+}
+#det_zam label select{
+    float: right;
+}
+.window h3{
+    width: 100%;
+    margin-bottom: 10px;
+    float: left;
+}
+#zam_towar{
+    width: 100%;
+    float: left;
+}
+#zam_towar img{
+    width: 10%; 
+    margin: 1%;
+    
+    float: left;
+    box-shadow: 1px 1px 1px;
+}
+.name_prod{
+    width: 100%;
+    font-weight: 600;
+    text-decoration: underline;
+    float: left;
+    text-align: center;
+}
+.kod_prod{
+    width: 25%;
+    
+    float: left;
+}
+.post_prod{
+    width: 30%;
+    
+    float: left;
+}
+.cena_prod{
+    width: 20%;
+    
+    float: left;
+    text-align: center;
+}
+#roz_zam{
+    float: left;
+}
+#kil_zam{
+    float: left;
+}
+#zam_towar label{
+    float: left;
+    width: 40%; 
+    margin-right: 3%;
+    margin-top: 30px;
+}
+#zam_towar label select{
+    float: right;
+    width: 50%; 
+}
+#zam_towar label input{
+    border-radius: 10px;
+    width: 100px;
+    height: 25px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    
+    float: right; 
+}
+
+#delet_tow_zam{
+    float: right;
+    width: 20%;
+
+    margin: 1%;
+    
+    box-shadow: 1px 1px 1px;
+    border-radius: 10px;
+    background-color: #6E738B;
+    color: white;
+    height: 30px;
+}
+#delete_zam{
+    width: 20%;
+    
+    box-shadow: 1px 1px 1px;
+    border-radius: 10px;
+    background-color: tomato;
+    color: black;
+    height: 30px;
+    float: right;
+}
+#zminyty{
+    width: 20%;
+    
+    box-shadow: 1px 1px 1px;
+    border-radius: 10px;
+    background-color: greenyellow;
+    color: black;
+    height: 30px;
+    float: left;
+}
+#zam_adres{
+    width: 100%;
+    float: left;
+}
+#zam_adres label{
+    float: left;
+    
+    width: 40%;
+    margin-right: 5%;
+    margin-bottom: 10px;
+}
+#zam_adres label input{
+    border-radius: 10px;
+    width: 50%;
+    height: 25px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    
+    float: right;
+}
+
+
+.line{
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+    float: left;
+    border-bottom: #000 solid 1px;
+}
+
+/*------------- Clear -------------------------------------------------------------*/
+.cls{
+    clear: both;
+}
+
+/*------------- Font Family -------------------------------------------------------------*/
+@font-face {
+    font-family: "BodoniC_Bold"; 
+    src: url("font/BodoniC_Bold/BodoniC-Bold.eot"); 
+    src: url("font/BodoniC_Bold/BodoniC-Bold.eot?#iefix") format("embedded-opentype"),
+    url("font/BodoniC_Bold/BodoniC-Bold.woff") format("woff"), 
+    url("font/BodoniC_Bold/BodoniC-Bold.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+}
+@font-face {
+    font-family: "AcademiaLibera"; 
+    src: url("font/AcademiaLibera/AcademiaLibera.eot"); 
+    src: url("font/AcademiaLibera/AcademiaLibera.eot?#iefix") format("embedded-opentype"),
+    url("font/AcademiaLibera/AcademiaLibera.woff") format("woff"), 
+    url("font/AcademiaLibera/AcademiaLibera.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+}
+
+
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
